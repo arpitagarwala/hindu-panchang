@@ -142,6 +142,13 @@ export default function PanchangApp() {
   }
   function updatePrefs(patch: Partial<Preferences>) {
     const next = { ...prefs, ...patch }; setPrefs(next);
+    if (patch.language) {
+      const url = new URL(window.location.href);
+      if (url.searchParams.has('lang')) {
+        url.searchParams.set('lang', patch.language);
+        window.history.replaceState(null, '', url);
+      }
+    }
     try { localStorage.setItem('panchang.preferences.v1', JSON.stringify(next)); } catch { notify('Your browser could not save these preferences.'); }
   }
   useEffect(() => {
