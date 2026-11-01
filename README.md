@@ -1,5 +1,7 @@
 # Panchang
 
+Live app: https://panchang.arpitagarwala.com · [Public AGPL source](https://github.com/arpitagarwala/hindu-panchang)
+
 ## Publishing and discoverability
 
 See [PUBLISHING.md](PUBLISHING.md) for subdomain deployment, HTTPS, public licensing and Search Console setup. Configure `SITE_URL` and `SITE_INDEXING` before a public build; previews intentionally stay noindex. Crawlable city pages, canonical URLs, structured data, social previews and a sitemap are included. Device location is permission-based; saved manual cities and shared coordinates take precedence over automatic detection. No public deployment or Google submission is implied by the local implementation.

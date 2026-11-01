@@ -37,3 +37,10 @@ Add `panchang.arpitagarwala.com` to this project's Vercel Domains settings. Use 
 Check the deployed `/api/panchang/health`, `/api/panchang/source`, daily/monthly APIs, city pages, source link, canonical host, location permission and failure cases. Re-run `validate-drik.mjs`, `verify-panchang.mjs`, `verify-observances.mjs` and `verify-seo.mjs` against the actual deployment using `PANCHANG_TEST_URL`. Use `PANCHANG_EXPECT_INDEXING=true` only for the launch-configured production build. Previews may require Vercel authentication; never disable protection solely to make a test pass.
 
 Hosting does not change astronomical conventions or resolve the documented regional limitations. Hobby usage quotas still apply, and Hobby's permitted-use terms are independent of the software license. No paid Vercel plan or add-on is authorized by this configuration.
+
+
+## Verified launch
+
+The native backend was deployed on Vercel Hobby and the Cloudflare subdomain was verified on 2026-11-01. The actual HTTPS deployment passed 185 stored Drik comparisons, 165 API/astronomical checks, 343 observance/parana checks and 42 preview-mode SEO checks before production indexing was enabled. The Linux GitHub Actions workflow also passed. These are scoped regression checks, not universal accuracy certification.
+
+Cloudflare record: CNAME `panchang` → `32c2c7035183c090.vercel-dns-017.com`, DNS-only. Use Vercel's current recommendation if the project assignment changes. No other domain records were changed.

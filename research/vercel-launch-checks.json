@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-01",
+  "deployment": "https://panchang.arpitagarwala.com",
+  "hosting": "Vercel Hobby",
+  "engine": "Swiss Ephemeris 2.10.03, unchanged",
+  "health": "passed, native engine and official-file SHA-256 checks",
+  "liveChecks": {
+    "drikReference": 185,
+    "astronomyAndApi": 165,
+    "observancesAndParana": 343,
+    "previewSeo": 42
+  },
+  "linuxCi": "https://github.com/arpitagarwala/hindu-panchang/actions/runs/41282835639",
+  "scope": "Selected regression cases. Not universal or zero-error certification."
+}

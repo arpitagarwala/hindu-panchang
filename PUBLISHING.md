@@ -2,13 +2,13 @@
 
 The owner has selected **GitHub + Vercel Hobby** and the AGPL source-publication route. Follow VERCEL_DEPLOYMENT.md; the Render/Docker material below is an alternative, not the active launch plan.
 
-Prepared for a Node.js/container host. Sites/Cloudflare Workers cannot load the native Swiss Ephemeris Node addon. No DNS change, public deployment or Search Console submission has been made by these local changes.
+Prepared for a Node.js/container host. Sites/Cloudflare Workers cannot load the native Swiss Ephemeris Node addon. The site is deployed on Vercel at https://panchang.arpitagarwala.com, with the subdomain CNAME configured in Cloudflare. See VERCEL_DEPLOYMENT.md for the active setup.
 
 ## Needed for launch
 
-1. The user confirmed `panchang.arpitagarwala.com`. DNS provider and deployment-host access are still needed; this is not yet a live deployment.
-2. Supply access to a suitable Node/container host. This repository has a standalone Docker build; a Linux server with Docker, ports 80/443 and enough memory to build Next.js can run it. Hosting charges are separate from Panchang generation.
-3. Resolve Swiss Ephemeris licensing before public service: comply with AGPL source obligations or hold a professional license. No license is silently assigned to the existing project. Review the upstream terms and THIRD_PARTY_NOTICES.md. If using AGPL, make the applicable complete corresponding source, license notices and build instructions available to service users before launch; publish an accessible source link in the website.
+1. The user confirmed `panchang.arpitagarwala.com`. Cloudflare DNS is configured and the Vercel deployment is live.
+2. Vercel Hobby is the selected host. For an alternative self-hosted deployment, use a suitable Node/container host. This repository has a standalone Docker build; a Linux server with Docker, ports 80/443 and enough memory to build Next.js can run it. Hosting charges are separate from Panchang generation.
+3. The owner selected AGPL-3.0-or-later and public corresponding source at https://github.com/arpitagarwala/hindu-panchang. The website exposes its source link. Preserve applicable source obligations and notices. Review the upstream terms and THIRD_PARTY_NOTICES.md. If using AGPL, make the applicable complete corresponding source, license notices and build instructions available to service users before launch; publish an accessible source link in the website.
 
 ## Cloudflare DNS with Render hosting
 
