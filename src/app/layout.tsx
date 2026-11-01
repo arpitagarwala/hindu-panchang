@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
+import SiteFooter from '@/components/Panchang/SiteFooter';
 import { SITE_URL, SITE_NAME, INDEXING_ENABLED } from '@/lib/site-config';
 
 export const metadata: Metadata = {
@@ -42,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         {children}
-        <footer style={{ padding: '16px 24px', textAlign: 'center', fontSize: 14, background: '#fcfaf5', color: '#514c43', borderTop: '1px solid #ded8cb' }}><a href="https://github.com/arpitagarwala/hindu-panchang" style={{ color: '#88401b', textDecoration: 'underline' }}>Source code · GNU AGPL</a></footer>
+        <SiteFooter/>
       </body>
     </html>
   );

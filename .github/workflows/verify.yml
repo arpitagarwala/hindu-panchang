@@ -23,6 +23,7 @@ jobs:
       - run: npm ci
       - run: npx tsx scripts/verify-self-hosted.ts
       - run: npx tsx scripts/verify-device-location.ts
+      - run: npx tsx scripts/verify-reading-experience.ts
       - run: npx tsx scripts/verify-provider.ts
       - run: npm run build
       - name: Check production server

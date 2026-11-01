@@ -139,7 +139,7 @@ function daytimePart(sunrise: Date, sunset: Date, part: number) {
 
 export interface PanchangResult {
   date: string;
-  tithi: { index: number; name: string; paksha: string; end?: string };
+  tithi: { index: number; name: string; paksha: string; start?: string; end?: string };
   nakshatra: { index: number; name: string; end?: string };
   yoga: { index: number; name: string; end?: string };
   karana: { name: string; end?: string };

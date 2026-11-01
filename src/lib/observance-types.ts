@@ -18,6 +18,7 @@ export interface Observance {
   source: string;
   status: 'calculated' | 'review-required' | 'reference-checked';
   window?: TimeWindow;
+  tithiWindow?: TimeWindow;
   parana?: Parana;
   notes?: string;
 }

@@ -1,5 +1,9 @@
 # Third-party notices
 
+## Daily Gita reading
+
+The 36 bundled ancient Sanskrit verses are taken from the public-domain/Unlicense `gita/gita` dataset: https://github.com/gita/gita/blob/main/data/verse.json . The corresponding dataset license is https://github.com/gita/gita/blob/main/LICENSE . Only Sanskrit verse text and verse numbers are retained. The brief English and Hindi meanings in this app are original summaries, not copied modern translations. Readings rotate by the selected civil date with no network request.
+
 ## Swiss Ephemeris
 
 Daily Panchang and festival APIs use `sweph` (2.10.3-8), bindings to Swiss Ephemeris 2.10.03, Copyright Astrodienst AG. The dependency's license notice is in `node_modules/sweph/LICENSE`.

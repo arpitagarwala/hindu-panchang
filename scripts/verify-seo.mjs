@@ -13,7 +13,7 @@ check(home.text.includes('Today’s Hindu Panchang') || home.text.includes('Toda
 check(home.text.includes('application/ld+json'), 'Structured data present');
 check(home.text.includes('rel="canonical"'), 'Home has canonical');
 check(home.text.includes('/panchang/new-delhi'), 'Crawlable city links');
-check(home.text.includes('Detect my location'), 'Location detection control is visible before interaction');
+check(home.text.includes('Change Panchang location'), 'Compact location control remains visible before interaction');
 check(home.text.includes(indexed ? 'content="index, follow' : 'content="noindex, follow'), 'Preview/production index directive');
 check(home.response.headers.get('permissions-policy')?.includes('geolocation=(self)'), 'Same-origin geolocation is permitted');
 for (const slug of ['new-delhi', 'mumbai', 'bengaluru', 'varanasi', 'ujjain']) {

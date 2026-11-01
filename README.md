@@ -99,3 +99,12 @@ The provider suite uses mocked network calls. Limited actual live checks are rec
 The preferred deployment is GitHub + Vercel Hobby with Node.js 22 functions. See [VERCEL_DEPLOYMENT.md](VERCEL_DEPLOYMENT.md). The same Swiss Ephemeris backend runs without a third-party Panchang API. Project source: https://github.com/arpitagarwala/hindu-panchang .
 
 Licensed under GNU AGPL-3.0-or-later by the owner's choice; see LICENSE, NOTICE and THIRD_PARTY_NOTICES.md. The website includes a visible link to its corresponding source.
+
+
+## Reading experience and Hindi
+
+The personal Panchang supports English and Hindi throughout daily readings, astronomical names, timing cards, festival search, calendars, location selection and settings. Language is saved locally; shared links can specify `lang=hi`. The main screen keeps location and settings compact, with calculation/source details inside Learn Panchang.
+
+Festival calendars display names directly. The full desktop calendar uses a week grid, while compact and mobile calendars use readable date cards. Festival summaries expose their actual rule's tithi interval separately from the sunrise-sampled daily tithi. Derived following-day events and solar/nakshatra rules do not invent a tithi window.
+
+Daily Gita readings rotate through 36 bundled Sanskrit verses with original brief Hindi and English meanings. The selected civil date determines the verse, and a live view advances at local midnight. Run `npx tsx scripts/verify-reading-experience.ts` for the name, date-rotation and festival-tithi regressions.

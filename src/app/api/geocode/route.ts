@@ -17,12 +17,13 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ timeZone: tzLookup(lat, lon), source: 'Coordinate time-zone lookup' }, { headers: { 'Cache-Control': 'no-store' } });
   }
   const q = (params.get('q') || '').trim();
+  const language=params.get('language')==='hi'?'hi':'en';
   if (q.length > 120) return NextResponse.json({ error: 'Please use a shorter place name.' }, { status: 400 });
   if (q.length < 2) return NextResponse.json({ results: CITIES_DATABASE.slice(0, 18).map(withZone), source: 'Popular cities', remote: false });
   const localResults = searchLocalCities(q, 30).map(withZone);
   try {
     const url = new URL('https://geocoding-api.open-meteo.com/v1/search');
-    url.search = new URLSearchParams({ name: q, count: '50', language: 'en', format: 'json' }).toString();
+    url.search = new URLSearchParams({ name: q, count: '50', language, format: 'json' }).toString();
     const response = await fetch(url, { next: { revalidate: 86400 }, signal: AbortSignal.timeout(7000) });
     if (!response.ok) throw new Error('Worldwide search is temporarily unavailable.');
     const payload = await response.json() as { results?: RemoteCity[] };

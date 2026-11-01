@@ -93,10 +93,12 @@ export function calculateObservances(from:string,to:string,lat:number,lon:number
   const dayCache=new Map<string,DetailedPanchang>();
   const getDay:DayProvider=date=>{let value=dayCache.get(date);if(!value){value=calculateDaily(lat,lon,new Date(localInstant(date,12,tz)),tz,options,false);dayCache.set(date,value);}return value;};
   const events:Observance[]=[];
-  const add=(event:Observance)=>{if(event.date>=from&&event.date<=to&&!events.some(e=>e.id===event.id&&e.date===event.date))events.push(event);};
+  let activeTithi:TimeWindow|undefined;
+  const add=(event:Observance)=>{if(event.date>=from&&event.date<=to&&!events.some(e=>e.id===event.id&&e.date===event.date))events.push({...event,tithiWindow:event.id.startsWith('dahi-handi-')||event.id.startsWith('holi-')?undefined:activeTithi});};
   const first=localInstant(shiftDate(from,-3),0,tz),last=localInstant(shiftDate(to,3),23,tz);
   let interval=tithiInterval(first);
   for(let count=0;interval.start<last&&count<45;count++){
+    activeTithi={start:iso(interval.start),end:iso(interval.end)};
     const month=lunarMonth((interval.start+interval.end)/2),id=Math.round(interval.start);
     if(interval.index===11||interval.index===26){const e=ekadashi(interval,getDay,tz,options);if(e)add(e);}
     if(interval.index===13||interval.index===28){
@@ -124,6 +126,8 @@ export function calculateObservances(from:string,to:string,lat:number,lon:number
     if(month.index===11&&interval.index===15&&!month.isAdhika){const selected=choose(interval,'pradosh',getDay,tz);if(selected.chosen){const c=selected.chosen,w=c.window?subtractVishti(c.window):undefined;const date=w?c.date:shiftDate(c.date,1);add({id:`holika-${id}`,name:'Holika Dahan',date,kind:'festival',rule:'Phalguna Purnima evening with Bhadra exclusions; Bhadra-tail and next-evening exceptions require review.',source:RULE_SOURCES.holika,status:'review-required',notes:'The full Holika Bhadra-mukha/punchha precedence is not yet implemented. No final puja window is asserted.'});add({id:`holi-${id}`,name:'Holi · Rangwali',date:shiftDate(date,1),kind:'festival',rule:'Day after the provisional Holika Dahan date.',source:RULE_SOURCES.holika,status:'review-required'});}}
     interval=tithiInterval(interval.end+2000);
   }
+  // Solar/nakshatra observances below do not have an asserted lunar-tithi rule.
+  activeTithi=undefined;
   // Source-checked local exception. Strictly scoped to the reference coordinates
   // and convention; never reused for another city/year.
   if(Math.abs(lat-28.6139)<0.015&&Math.abs(lon-77.209)<0.015&&tz==='Asia/Kolkata'&&options.sunriseConvention==='edges'){
