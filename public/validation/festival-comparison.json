@@ -1,0 +1,143 @@
+{
+  "testedAt": "2026-10-31T19:09:51.440Z",
+  "fixtureCount": 10,
+  "checks": 343,
+  "scope": "Limited published date/parana samples. Calculated entries are not a claim of complete regional/sampradaya certification.",
+  "cases": [
+    {
+      "city": "New Delhi",
+      "name": "Rama Ekadashi",
+      "date": "2026-11-05",
+      "source": "https://www.drikpanchang.com/ekadashis/rama/rama-ekadashi-date-time.html?year=2026&geoname-id=1261481",
+      "checks": [
+        {
+          "field": "paranaStart",
+          "actual": "2026-11-06T01:06:38.399Z",
+          "reference": "2026-11-06T06:37:00+05:30",
+          "deltaSeconds": 21.6
+        },
+        {
+          "field": "paranaEnd",
+          "actual": "2026-11-06T03:17:49.832Z",
+          "reference": "2026-11-06T08:48:00+05:30",
+          "deltaSeconds": 10.2
+        }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "name": "Devutthana Ekadashi",
+      "date": "2026-11-20",
+      "source": "https://www.drikpanchang.com/ekadashis/prabodhini/prabodhini-ekadashi-date-time.html?year=2026&geoname-id=1261481",
+      "checks": [
+        {
+          "field": "paranaStart",
+          "actual": "2026-11-21T07:40:33.150Z",
+          "reference": "2026-11-21T13:11:00+05:30",
+          "deltaSeconds": 26.9
+        },
+        {
+          "field": "paranaEnd",
+          "actual": "2026-11-21T09:47:57.556Z",
+          "reference": "2026-11-21T15:18:00+05:30",
+          "deltaSeconds": 2.4
+        }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "name": "Devutthana Ekadashi",
+      "date": "2026-11-21",
+      "source": "https://www.drikpanchang.com/ekadashis/prabodhini/prabodhini-ekadashi-date-time.html?year=2026&geoname-id=1261481",
+      "checks": [
+        {
+          "field": "paranaStart",
+          "actual": "2026-11-22T01:19:07.664Z",
+          "reference": "2026-11-22T06:49:00+05:30",
+          "deltaSeconds": 7.7
+        },
+        {
+          "field": "paranaEnd",
+          "actual": "2026-11-22T03:26:19.176Z",
+          "reference": "2026-11-22T08:56:00+05:30",
+          "deltaSeconds": 19.2
+        }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "name": "Pradosh Vrat",
+      "date": "2026-10-23",
+      "source": "https://www.drikpanchang.com/vrats/pradoshdates.html?year=2026&geoname-id=1261481",
+      "checks": []
+    },
+    {
+      "city": "New Delhi",
+      "name": "Pradosh Vrat",
+      "date": "2026-11-06",
+      "source": "https://www.drikpanchang.com/vrats/pradoshdates.html?year=2026&geoname-id=1261481",
+      "checks": []
+    },
+    {
+      "city": "New Delhi",
+      "name": "Diwali · Lakshmi Puja",
+      "date": "2026-11-08",
+      "source": "https://www.drikpanchang.com/festivals/lakshmipuja/festivals-lakshmipuja-timings.html?year=2026&geoname-id=1261481",
+      "checks": [
+        {
+          "field": "windowStart",
+          "actual": "2026-11-08T12:24:54.356Z",
+          "reference": "2026-11-08T17:54:00+05:30",
+          "deltaSeconds": 54.4
+        },
+        {
+          "field": "windowEnd",
+          "actual": "2026-11-08T14:20:30.450Z",
+          "reference": "2026-11-08T19:50:00+05:30",
+          "deltaSeconds": 30.5
+        }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "name": "Ganesh Chaturthi",
+      "date": "2026-09-14",
+      "source": "https://www.drikpanchang.com/festivals/ganesh-chaturthi/ganesh-chaturthi-date-time.html?year=2026&geoname-id=1261481",
+      "checks": [
+        {
+          "field": "windowStart",
+          "actual": "2026-09-14T05:32:23.423Z",
+          "reference": "2026-09-14T11:02:00+05:30",
+          "deltaSeconds": 23.4
+        },
+        {
+          "field": "windowEnd",
+          "actual": "2026-09-14T08:00:48.412Z",
+          "reference": "2026-09-14T13:31:00+05:30",
+          "deltaSeconds": 11.6
+        }
+      ]
+    },
+    {
+      "city": "Mumbai",
+      "name": "Pradosh Vrat",
+      "date": "2026-10-23",
+      "source": "https://www.drikpanchang.com/marathi/panchang/marathi-month-panchang.html?year=2026&geoname-id=1275339",
+      "checks": []
+    },
+    {
+      "city": "Mumbai",
+      "name": "Sharad Purnima · Kojagari",
+      "date": "2026-10-25",
+      "source": "https://www.drikpanchang.com/marathi/panchang/marathi-month-panchang.html?year=2026&geoname-id=1275339",
+      "checks": []
+    },
+    {
+      "city": "Mumbai",
+      "name": "Sankashti Chaturthi",
+      "date": "2026-10-29",
+      "source": "https://www.drikpanchang.com/marathi/panchang/marathi-month-panchang.html?year=2026&geoname-id=1275339",
+      "checks": []
+    }
+  ]
+}

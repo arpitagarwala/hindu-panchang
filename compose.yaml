@@ -1,0 +1,11 @@
+services:
+  panchang:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PANCHANG_DATA_MODE: local
+    restart: unless-stopped
+    init: true
+    security_opt:
+      - no-new-privileges:true

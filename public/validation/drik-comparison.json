@@ -1,0 +1,1444 @@
+{
+  "testedAt": "2026-10-31T19:12:01.240Z",
+  "engine": "Swiss Ephemeris 2.10.03 with official Sun/Moon files",
+  "reference": "Drik Panchang",
+  "referenceRetrievedOn": "2026-10-31",
+  "caseCount": 9,
+  "cityCount": 5,
+  "checks": 185,
+  "failures": 0,
+  "maxTransitionDeltaSeconds": 86.3,
+  "maxSolarDeltaSeconds": 34,
+  "maxWindowDeltaSeconds": 31.4,
+  "sourcePrecisionSeconds": 60,
+  "scope": "Manually recorded reference samples across 2025–2027. Not a worldwide accuracy certification. Centroid and rounding differences are included in the tolerances.",
+  "conventions": "Lahiri sidereal; upper-edge sunrise with standard refraction; zero elevation; compare Amanta and Purnimanta separately.",
+  "details": [
+    {
+      "city": "New Delhi",
+      "date": "2026-10-31",
+      "timeZone": "Asia/Kolkata",
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=1261481",
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "actual": "Shashthi",
+          "reference": "Shashthi",
+          "passed": true
+        },
+        {
+          "field": "tithi.end",
+          "actual": "2026-10-31T11:27:49.173Z",
+          "reference": "2026-10-31T16:57:00+05:30",
+          "deltaSeconds": 49.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "nakshatra.name",
+          "actual": "Ardra",
+          "reference": "Ardra",
+          "passed": true
+        },
+        {
+          "field": "nakshatra.end",
+          "actual": "2026-10-31T01:42:14.237Z",
+          "reference": "2026-10-31T07:12:00+05:30",
+          "deltaSeconds": 14.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yoga.name",
+          "actual": "Siddha",
+          "reference": "Siddha",
+          "passed": true
+        },
+        {
+          "field": "yoga.end",
+          "actual": "2026-10-31T12:01:42.523Z",
+          "reference": "2026-10-31T17:31:00+05:30",
+          "deltaSeconds": 42.5,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "karana.name",
+          "actual": "Vanija",
+          "reference": "Vanija",
+          "passed": true
+        },
+        {
+          "field": "karana.end",
+          "actual": "2026-10-31T11:27:49.173Z",
+          "reference": "2026-10-31T16:57:00+05:30",
+          "deltaSeconds": 49.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "sunrise",
+          "actual": "2026-10-31T01:02:16.251Z",
+          "reference": "2026-10-31T06:32:00+05:30",
+          "deltaSeconds": 16.3,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "sunset",
+          "actual": "2026-10-31T12:06:56.774Z",
+          "reference": "2026-10-31T17:37:00+05:30",
+          "deltaSeconds": 3.2,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.start",
+          "actual": "2026-10-30T23:19:00.035Z",
+          "reference": "2026-10-31T04:49:00+05:30",
+          "deltaSeconds": 0,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.end",
+          "actual": "2026-10-31T00:10:38.143Z",
+          "reference": "2026-10-31T05:41:00+05:30",
+          "deltaSeconds": 21.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.start",
+          "actual": "2026-10-31T06:12:27.161Z",
+          "reference": "2026-10-31T11:42:00+05:30",
+          "deltaSeconds": 27.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.end",
+          "actual": "2026-10-31T06:56:45.863Z",
+          "reference": "2026-10-31T12:27:00+05:30",
+          "deltaSeconds": 14.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.start",
+          "actual": "2026-10-31T03:48:26.381Z",
+          "reference": "2026-10-31T09:18:00+05:30",
+          "deltaSeconds": 26.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.end",
+          "actual": "2026-10-31T05:11:31.447Z",
+          "reference": "2026-10-31T10:41:00+05:30",
+          "deltaSeconds": 31.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.start",
+          "actual": "2026-10-31T07:57:41.577Z",
+          "reference": "2026-10-31T13:28:00+05:30",
+          "deltaSeconds": 18.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.end",
+          "actual": "2026-10-31T09:20:46.643Z",
+          "reference": "2026-10-31T14:51:00+05:30",
+          "deltaSeconds": 13.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.start",
+          "actual": "2026-10-31T01:02:16.251Z",
+          "reference": "2026-10-31T06:32:00+05:30",
+          "deltaSeconds": 16.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.end",
+          "actual": "2026-10-31T02:25:21.316Z",
+          "reference": "2026-10-31T07:55:00+05:30",
+          "deltaSeconds": 21.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "amantaMonth",
+          "actual": "Ashwin",
+          "reference": "Ashwina",
+          "passed": true
+        },
+        {
+          "field": "purnimantaMonth",
+          "actual": "Kartik",
+          "reference": "Kartika",
+          "passed": true
+        },
+        {
+          "field": "vikramSamvat",
+          "actual": 2083,
+          "reference": 2083,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "city": "Bengaluru",
+      "date": "2026-10-31",
+      "timeZone": "Asia/Kolkata",
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=1277333",
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "actual": "Shashthi",
+          "reference": "Shashthi",
+          "passed": true
+        },
+        {
+          "field": "tithi.end",
+          "actual": "2026-10-31T11:27:49.119Z",
+          "reference": "2026-10-31T16:57:00+05:30",
+          "deltaSeconds": 49.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "nakshatra.name",
+          "actual": "Ardra",
+          "reference": "Ardra",
+          "passed": true
+        },
+        {
+          "field": "nakshatra.end",
+          "actual": "2026-10-31T01:42:14.402Z",
+          "reference": "2026-10-31T07:12:00+05:30",
+          "deltaSeconds": 14.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yoga.name",
+          "actual": "Siddha",
+          "reference": "Siddha",
+          "passed": true
+        },
+        {
+          "field": "yoga.end",
+          "actual": "2026-10-31T12:01:42.688Z",
+          "reference": "2026-10-31T17:31:00+05:30",
+          "deltaSeconds": 42.7,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "karana.name",
+          "actual": "Vanija",
+          "reference": "Vanija",
+          "passed": true
+        },
+        {
+          "field": "karana.end",
+          "actual": "2026-10-31T11:27:49.119Z",
+          "reference": "2026-10-31T16:57:00+05:30",
+          "deltaSeconds": 49.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "sunrise",
+          "actual": "2026-10-31T00:42:58.018Z",
+          "reference": "2026-10-31T06:13:00+05:30",
+          "deltaSeconds": 2,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "sunset",
+          "actual": "2026-10-31T12:23:21.611Z",
+          "reference": "2026-10-31T17:53:00+05:30",
+          "deltaSeconds": 21.6,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.start",
+          "actual": "2026-10-30T23:04:24.030Z",
+          "reference": "2026-10-31T04:34:00+05:30",
+          "deltaSeconds": 24,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.end",
+          "actual": "2026-10-30T23:53:41.024Z",
+          "reference": "2026-10-31T05:24:00+05:30",
+          "deltaSeconds": 19,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.start",
+          "actual": "2026-10-31T06:09:49.028Z",
+          "reference": "2026-10-31T11:40:00+05:30",
+          "deltaSeconds": 11,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.end",
+          "actual": "2026-10-31T06:56:30.600Z",
+          "reference": "2026-10-31T12:26:00+05:30",
+          "deltaSeconds": 30.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.start",
+          "actual": "2026-10-31T03:38:03.916Z",
+          "reference": "2026-10-31T09:08:00+05:30",
+          "deltaSeconds": 3.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.end",
+          "actual": "2026-10-31T05:05:36.865Z",
+          "reference": "2026-10-31T10:36:00+05:30",
+          "deltaSeconds": 23.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.start",
+          "actual": "2026-10-31T08:00:42.763Z",
+          "reference": "2026-10-31T13:31:00+05:30",
+          "deltaSeconds": 17.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.end",
+          "actual": "2026-10-31T09:28:15.712Z",
+          "reference": "2026-10-31T14:58:00+05:30",
+          "deltaSeconds": 15.7,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.start",
+          "actual": "2026-10-31T00:42:58.018Z",
+          "reference": "2026-10-31T06:13:00+05:30",
+          "deltaSeconds": 2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.end",
+          "actual": "2026-10-31T02:10:30.967Z",
+          "reference": "2026-10-31T07:40:00+05:30",
+          "deltaSeconds": 31,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "amantaMonth",
+          "actual": "Ashwin",
+          "reference": "Ashwina",
+          "passed": true
+        },
+        {
+          "field": "purnimantaMonth",
+          "actual": "Kartik",
+          "reference": "Kartika",
+          "passed": true
+        },
+        {
+          "field": "vikramSamvat",
+          "actual": 2083,
+          "reference": 2083,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "city": "Mumbai",
+      "date": "2026-10-31",
+      "timeZone": "Asia/Kolkata",
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=1275339",
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "actual": "Shashthi",
+          "reference": "Shashthi",
+          "passed": true
+        },
+        {
+          "field": "tithi.end",
+          "actual": "2026-10-31T11:27:49.214Z",
+          "reference": "2026-10-31T16:57:00+05:30",
+          "deltaSeconds": 49.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "nakshatra.name",
+          "actual": "Ardra",
+          "reference": "Ardra",
+          "passed": true
+        },
+        {
+          "field": "nakshatra.end",
+          "actual": "2026-10-31T01:42:14.278Z",
+          "reference": "2026-10-31T07:12:00+05:30",
+          "deltaSeconds": 14.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yoga.name",
+          "actual": "Siddha",
+          "reference": "Siddha",
+          "passed": true
+        },
+        {
+          "field": "yoga.end",
+          "actual": "2026-10-31T12:01:42.564Z",
+          "reference": "2026-10-31T17:31:00+05:30",
+          "deltaSeconds": 42.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "karana.name",
+          "actual": "Vanija",
+          "reference": "Vanija",
+          "passed": true
+        },
+        {
+          "field": "karana.end",
+          "actual": "2026-10-31T11:27:49.214Z",
+          "reference": "2026-10-31T16:57:00+05:30",
+          "deltaSeconds": 49.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "sunrise",
+          "actual": "2026-10-31T01:08:21.917Z",
+          "reference": "2026-10-31T06:38:00+05:30",
+          "deltaSeconds": 21.9,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "sunset",
+          "actual": "2026-10-31T12:35:37.355Z",
+          "reference": "2026-10-31T18:06:00+05:30",
+          "deltaSeconds": 22.6,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.start",
+          "actual": "2026-10-31T06:29:05.121Z",
+          "reference": "2026-10-31T11:59:00+05:30",
+          "deltaSeconds": 5.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.end",
+          "actual": "2026-10-31T07:14:54.150Z",
+          "reference": "2026-10-31T12:45:00+05:30",
+          "deltaSeconds": 5.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.start",
+          "actual": "2026-10-31T04:00:10.776Z",
+          "reference": "2026-10-31T09:30:00+05:30",
+          "deltaSeconds": 10.8,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.end",
+          "actual": "2026-10-31T05:26:05.206Z",
+          "reference": "2026-10-31T10:56:00+05:30",
+          "deltaSeconds": 5.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.start",
+          "actual": "2026-10-31T08:17:54.065Z",
+          "reference": "2026-10-31T13:48:00+05:30",
+          "deltaSeconds": 5.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.end",
+          "actual": "2026-10-31T09:43:48.495Z",
+          "reference": "2026-10-31T15:14:00+05:30",
+          "deltaSeconds": 11.5,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.start",
+          "actual": "2026-10-31T01:08:21.917Z",
+          "reference": "2026-10-31T06:38:00+05:30",
+          "deltaSeconds": 21.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.end",
+          "actual": "2026-10-31T02:34:16.346Z",
+          "reference": "2026-10-31T08:04:00+05:30",
+          "deltaSeconds": 16.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "amantaMonth",
+          "actual": "Ashwin",
+          "reference": "Ashwina",
+          "passed": true
+        },
+        {
+          "field": "purnimantaMonth",
+          "actual": "Kartik",
+          "reference": "Kartika",
+          "passed": true
+        },
+        {
+          "field": "vikramSamvat",
+          "actual": 2083,
+          "reference": 2083,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "city": "London",
+      "date": "2026-10-31",
+      "timeZone": "Europe/London",
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=2643743",
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "actual": "Shashthi",
+          "reference": "Shashthi",
+          "passed": true
+        },
+        {
+          "field": "tithi.end",
+          "actual": "2026-10-31T11:27:49.279Z",
+          "reference": "2026-10-31T11:27:00+00:00",
+          "deltaSeconds": 49.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "nakshatra.name",
+          "actual": "Punarvasu",
+          "reference": "Punarvasu",
+          "passed": true
+        },
+        {
+          "field": "nakshatra.end",
+          "actual": "2026-11-01T00:09:53.058Z",
+          "reference": "2026-11-01T00:09:00+00:00",
+          "deltaSeconds": 53.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yoga.name",
+          "actual": "Siddha",
+          "reference": "Siddha",
+          "passed": true
+        },
+        {
+          "field": "yoga.end",
+          "actual": "2026-10-31T12:01:42.628Z",
+          "reference": "2026-10-31T12:01:00+00:00",
+          "deltaSeconds": 42.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "karana.name",
+          "actual": "Vanija",
+          "reference": "Vanija",
+          "passed": true
+        },
+        {
+          "field": "karana.end",
+          "actual": "2026-10-31T11:27:49.279Z",
+          "reference": "2026-10-31T11:27:00+00:00",
+          "deltaSeconds": 49.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "sunrise",
+          "actual": "2026-10-31T06:52:12.328Z",
+          "reference": "2026-10-31T06:52:00+00:00",
+          "deltaSeconds": 12.3,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "sunset",
+          "actual": "2026-10-31T16:35:18.372Z",
+          "reference": "2026-10-31T16:35:00+00:00",
+          "deltaSeconds": 18.4,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.start",
+          "actual": "2026-10-31T04:58:11.885Z",
+          "reference": "2026-10-31T04:58:00+00:00",
+          "deltaSeconds": 11.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.end",
+          "actual": "2026-10-31T05:55:12.106Z",
+          "reference": "2026-10-31T05:55:00+00:00",
+          "deltaSeconds": 12.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.start",
+          "actual": "2026-10-31T11:24:19.148Z",
+          "reference": "2026-10-31T11:24:00+00:00",
+          "deltaSeconds": 19.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.end",
+          "actual": "2026-10-31T12:03:11.551Z",
+          "reference": "2026-10-31T12:03:00+00:00",
+          "deltaSeconds": 11.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.start",
+          "actual": "2026-10-31T09:17:58.839Z",
+          "reference": "2026-10-31T09:18:00+00:00",
+          "deltaSeconds": 1.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.end",
+          "actual": "2026-10-31T10:30:52.094Z",
+          "reference": "2026-10-31T10:31:00+00:00",
+          "deltaSeconds": 7.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.start",
+          "actual": "2026-10-31T12:56:38.605Z",
+          "reference": "2026-10-31T12:57:00+00:00",
+          "deltaSeconds": 21.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.end",
+          "actual": "2026-10-31T14:09:31.861Z",
+          "reference": "2026-10-31T14:10:00+00:00",
+          "deltaSeconds": 28.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.start",
+          "actual": "2026-10-31T06:52:12.328Z",
+          "reference": "2026-10-31T06:52:00+00:00",
+          "deltaSeconds": 12.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.end",
+          "actual": "2026-10-31T08:05:05.583Z",
+          "reference": "2026-10-31T08:05:00+00:00",
+          "deltaSeconds": 5.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "amantaMonth",
+          "actual": "Ashwin",
+          "reference": "Ashwina",
+          "passed": true
+        },
+        {
+          "field": "purnimantaMonth",
+          "actual": "Kartik",
+          "reference": "Kartika",
+          "passed": true
+        },
+        {
+          "field": "vikramSamvat",
+          "actual": 2083,
+          "reference": 2083,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "city": "New York City",
+      "date": "2026-10-31",
+      "timeZone": "America/New_York",
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=5128581",
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "actual": "Shashthi",
+          "reference": "Shashthi",
+          "passed": true
+        },
+        {
+          "field": "tithi.end",
+          "actual": "2026-10-31T11:27:49.210Z",
+          "reference": "2026-10-31T07:27:00-04:00",
+          "deltaSeconds": 49.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "nakshatra.name",
+          "actual": "Punarvasu",
+          "reference": "Punarvasu",
+          "passed": true
+        },
+        {
+          "field": "nakshatra.end",
+          "actual": "2026-11-01T00:09:52.989Z",
+          "reference": "2026-10-31T20:09:00-04:00",
+          "deltaSeconds": 53,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yoga.name",
+          "actual": "Siddha",
+          "reference": "Siddha",
+          "passed": true
+        },
+        {
+          "field": "yoga.end",
+          "actual": "2026-10-31T12:01:42.559Z",
+          "reference": "2026-10-31T08:01:00-04:00",
+          "deltaSeconds": 42.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "karana.name",
+          "actual": "Vanija",
+          "reference": "Vanija",
+          "passed": true
+        },
+        {
+          "field": "karana.end",
+          "actual": "2026-10-31T11:27:49.210Z",
+          "reference": "2026-10-31T07:27:00-04:00",
+          "deltaSeconds": 49.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "sunrise",
+          "actual": "2026-10-31T11:25:18.807Z",
+          "reference": "2026-10-31T07:25:00-04:00",
+          "deltaSeconds": 18.8,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "sunset",
+          "actual": "2026-10-31T21:53:24.885Z",
+          "reference": "2026-10-31T17:53:00-04:00",
+          "deltaSeconds": 24.9,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.start",
+          "actual": "2026-10-31T09:37:13.533Z",
+          "reference": "2026-10-31T05:37:00-04:00",
+          "deltaSeconds": 13.5,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.end",
+          "actual": "2026-10-31T10:31:16.170Z",
+          "reference": "2026-10-31T06:31:00-04:00",
+          "deltaSeconds": 16.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.start",
+          "actual": "2026-10-31T16:18:25.643Z",
+          "reference": "2026-10-31T12:18:00-04:00",
+          "deltaSeconds": 25.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.end",
+          "actual": "2026-10-31T17:00:18.048Z",
+          "reference": "2026-10-31T13:00:00-04:00",
+          "deltaSeconds": 18,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.start",
+          "actual": "2026-10-31T14:02:20.326Z",
+          "reference": "2026-10-31T10:02:00-04:00",
+          "deltaSeconds": 20.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.end",
+          "actual": "2026-10-31T15:20:51.086Z",
+          "reference": "2026-10-31T11:21:00-04:00",
+          "deltaSeconds": 8.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.start",
+          "actual": "2026-10-31T17:57:52.605Z",
+          "reference": "2026-10-31T13:58:00-04:00",
+          "deltaSeconds": 7.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.end",
+          "actual": "2026-10-31T19:16:23.365Z",
+          "reference": "2026-10-31T15:16:00-04:00",
+          "deltaSeconds": 23.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.start",
+          "actual": "2026-10-31T11:25:18.807Z",
+          "reference": "2026-10-31T07:25:00-04:00",
+          "deltaSeconds": 18.8,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.end",
+          "actual": "2026-10-31T12:43:49.566Z",
+          "reference": "2026-10-31T08:44:00-04:00",
+          "deltaSeconds": 10.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "amantaMonth",
+          "actual": "Ashwin",
+          "reference": "Ashwina",
+          "passed": true
+        },
+        {
+          "field": "purnimantaMonth",
+          "actual": "Kartik",
+          "reference": "Kartika",
+          "passed": true
+        },
+        {
+          "field": "vikramSamvat",
+          "actual": 2083,
+          "reference": 2083,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "date": "2026-10-30",
+      "timeZone": "Asia/Kolkata",
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=30/10/2026&geoname-id=1261481",
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "actual": "Panchami",
+          "reference": "Panchami",
+          "passed": true
+        },
+        {
+          "field": "tithi.end",
+          "actual": "2026-10-30T13:55:26.303Z",
+          "reference": "2026-10-30T19:24:00+05:30",
+          "deltaSeconds": 86.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "nakshatra.name",
+          "actual": "Mrigashirsha",
+          "reference": "Mrigashira",
+          "passed": true
+        },
+        {
+          "field": "nakshatra.end",
+          "actual": "2026-10-30T03:34:39.135Z",
+          "reference": "2026-10-30T09:04:00+05:30",
+          "deltaSeconds": 39.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yoga.name",
+          "actual": "Shiva",
+          "reference": "Shiva",
+          "passed": true
+        },
+        {
+          "field": "yoga.end",
+          "actual": "2026-10-30T15:11:45.624Z",
+          "reference": "2026-10-30T20:41:00+05:30",
+          "deltaSeconds": 45.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "karana.name",
+          "actual": "Kaulava",
+          "reference": "Kaulava",
+          "passed": true
+        },
+        {
+          "field": "karana.end",
+          "actual": "2026-10-30T03:16:11.713Z",
+          "reference": "2026-10-30T08:45:00+05:30",
+          "deltaSeconds": 71.7,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "sunrise",
+          "actual": "2026-10-30T01:01:34.015Z",
+          "reference": "2026-10-30T06:31:00+05:30",
+          "deltaSeconds": 34,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "sunset",
+          "actual": "2026-10-30T12:07:44.635Z",
+          "reference": "2026-10-30T17:38:00+05:30",
+          "deltaSeconds": 15.4,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "amantaMonth",
+          "actual": "Ashwin",
+          "reference": "Ashwina",
+          "passed": true
+        },
+        {
+          "field": "purnimantaMonth",
+          "actual": "Kartik",
+          "reference": "Kartika",
+          "passed": true
+        },
+        {
+          "field": "vikramSamvat",
+          "actual": 2083,
+          "reference": 2083,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "date": "2026-11-01",
+      "timeZone": "Asia/Kolkata",
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=01/11/2026&geoname-id=1261481",
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "actual": "Saptami",
+          "reference": "Saptami",
+          "passed": true
+        },
+        {
+          "field": "tithi.end",
+          "actual": "2026-11-01T09:22:11.053Z",
+          "reference": "2026-11-01T14:51:00+05:30",
+          "deltaSeconds": 71.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "nakshatra.name",
+          "actual": "Pushya",
+          "reference": "Pushya",
+          "passed": true
+        },
+        {
+          "field": "nakshatra.end",
+          "actual": "2026-11-01T23:00:53.343Z",
+          "reference": "2026-11-02T04:30:00+05:30",
+          "deltaSeconds": 53.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yoga.name",
+          "actual": "Sadhya",
+          "reference": "Sadhya",
+          "passed": true
+        },
+        {
+          "field": "yoga.end",
+          "actual": "2026-11-01T09:09:27.503Z",
+          "reference": "2026-11-01T14:39:00+05:30",
+          "deltaSeconds": 27.5,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "karana.name",
+          "actual": "Bava",
+          "reference": "Bava",
+          "passed": true
+        },
+        {
+          "field": "karana.end",
+          "actual": "2026-11-01T09:22:11.053Z",
+          "reference": "2026-11-01T14:51:00+05:30",
+          "deltaSeconds": 71.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "sunrise",
+          "actual": "2026-11-01T01:02:58.917Z",
+          "reference": "2026-11-01T06:33:00+05:30",
+          "deltaSeconds": 1.1,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "sunset",
+          "actual": "2026-11-01T12:06:10.104Z",
+          "reference": "2026-11-01T17:36:00+05:30",
+          "deltaSeconds": 10.1,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "amantaMonth",
+          "actual": "Ashwin",
+          "reference": "Ashwina",
+          "passed": true
+        },
+        {
+          "field": "purnimantaMonth",
+          "actual": "Kartik",
+          "reference": "Kartika",
+          "passed": true
+        },
+        {
+          "field": "vikramSamvat",
+          "actual": 2083,
+          "reference": 2083,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "date": "2025-01-14",
+      "timeZone": "Asia/Kolkata",
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=14/01/2025&geoname-id=1261481",
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "actual": "Pratipada",
+          "reference": "Pratipada",
+          "passed": true
+        },
+        {
+          "field": "tithi.end",
+          "actual": "2025-01-14T21:51:41.507Z",
+          "reference": "2025-01-15T03:21:00+05:30",
+          "deltaSeconds": 41.5,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "nakshatra.name",
+          "actual": "Punarvasu",
+          "reference": "Punarvasu",
+          "passed": true
+        },
+        {
+          "field": "nakshatra.end",
+          "actual": "2025-01-14T04:47:00.696Z",
+          "reference": "2025-01-14T10:17:00+05:30",
+          "deltaSeconds": 0.7,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yoga.name",
+          "actual": "Vishkambha",
+          "reference": "Vishkambha",
+          "passed": true
+        },
+        {
+          "field": "yoga.end",
+          "actual": "2025-01-14T21:28:16.355Z",
+          "reference": "2025-01-15T02:59:00+05:30",
+          "deltaSeconds": 43.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "karana.name",
+          "actual": "Balava",
+          "reference": "Balava",
+          "passed": true
+        },
+        {
+          "field": "karana.end",
+          "actual": "2025-01-14T10:04:58.675Z",
+          "reference": "2025-01-14T15:34:00+05:30",
+          "deltaSeconds": 58.7,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "sunrise",
+          "actual": "2025-01-14T01:45:05.010Z",
+          "reference": "2025-01-14T07:15:00+05:30",
+          "deltaSeconds": 5,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "sunset",
+          "actual": "2025-01-14T12:15:33.344Z",
+          "reference": "2025-01-14T17:46:00+05:30",
+          "deltaSeconds": 26.7,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.start",
+          "actual": "2025-01-13T23:57:02.292Z",
+          "reference": "2025-01-14T05:27:00+05:30",
+          "deltaSeconds": 2.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.end",
+          "actual": "2025-01-14T00:51:03.651Z",
+          "reference": "2025-01-14T06:21:00+05:30",
+          "deltaSeconds": 3.7,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.start",
+          "actual": "2025-01-14T06:39:18.232Z",
+          "reference": "2025-01-14T12:09:00+05:30",
+          "deltaSeconds": 18.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.end",
+          "actual": "2025-01-14T07:21:20.121Z",
+          "reference": "2025-01-14T12:51:00+05:30",
+          "deltaSeconds": 20.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.start",
+          "actual": "2025-01-14T09:37:56.260Z",
+          "reference": "2025-01-14T15:08:00+05:30",
+          "deltaSeconds": 3.7,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.end",
+          "actual": "2025-01-14T10:56:44.802Z",
+          "reference": "2025-01-14T16:27:00+05:30",
+          "deltaSeconds": 15.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.start",
+          "actual": "2025-01-14T04:22:42.093Z",
+          "reference": "2025-01-14T09:53:00+05:30",
+          "deltaSeconds": 17.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.end",
+          "actual": "2025-01-14T05:41:30.635Z",
+          "reference": "2025-01-14T11:12:00+05:30",
+          "deltaSeconds": 29.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.start",
+          "actual": "2025-01-14T07:00:19.177Z",
+          "reference": "2025-01-14T12:30:00+05:30",
+          "deltaSeconds": 19.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.end",
+          "actual": "2025-01-14T08:19:07.718Z",
+          "reference": "2025-01-14T13:49:00+05:30",
+          "deltaSeconds": 7.7,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "amantaMonth",
+          "actual": "Paush",
+          "reference": "Pausha",
+          "passed": true
+        },
+        {
+          "field": "purnimantaMonth",
+          "actual": "Magh",
+          "reference": "Magha",
+          "passed": true
+        },
+        {
+          "field": "vikramSamvat",
+          "actual": 2081,
+          "reference": 2081,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "date": "2027-01-15",
+      "timeZone": "Asia/Kolkata",
+      "source": "https://www.drikpanchang.com/panchang/day-panchang.html?date=15/01/2027&geoname-id=1261481",
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "actual": "Saptami",
+          "reference": "Saptami",
+          "passed": true
+        },
+        {
+          "field": "tithi.end",
+          "actual": "2027-01-15T08:43:59.155Z",
+          "reference": "2027-01-15T14:13:00+05:30",
+          "deltaSeconds": 59.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "nakshatra.name",
+          "actual": "Revati",
+          "reference": "Revati",
+          "passed": true
+        },
+        {
+          "field": "nakshatra.end",
+          "actual": "2027-01-15T18:21:18.168Z",
+          "reference": "2027-01-15T23:51:00+05:30",
+          "deltaSeconds": 18.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yoga.name",
+          "actual": "Shiva",
+          "reference": "Shiva",
+          "passed": true
+        },
+        {
+          "field": "yoga.end",
+          "actual": "2027-01-15T10:48:17.553Z",
+          "reference": "2027-01-15T16:18:00+05:30",
+          "deltaSeconds": 17.6,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "karana.name",
+          "actual": "Vanija",
+          "reference": "Vanija",
+          "passed": true
+        },
+        {
+          "field": "karana.end",
+          "actual": "2027-01-15T08:43:59.155Z",
+          "reference": "2027-01-15T14:13:00+05:30",
+          "deltaSeconds": 59.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "sunrise",
+          "actual": "2027-01-15T01:45:02.326Z",
+          "reference": "2027-01-15T07:15:00+05:30",
+          "deltaSeconds": 2.3,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "sunset",
+          "actual": "2027-01-15T12:15:59.388Z",
+          "reference": "2027-01-15T17:46:00+05:30",
+          "deltaSeconds": 0.6,
+          "toleranceSeconds": 90,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.start",
+          "actual": "2027-01-14T23:57:03.400Z",
+          "reference": "2027-01-15T05:27:00+05:30",
+          "deltaSeconds": 3.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "brahmaMuhurta.end",
+          "actual": "2027-01-15T00:51:02.863Z",
+          "reference": "2027-01-15T06:21:00+05:30",
+          "deltaSeconds": 2.9,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.start",
+          "actual": "2027-01-15T06:39:28.954Z",
+          "reference": "2027-01-15T12:09:00+05:30",
+          "deltaSeconds": 29,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "abhijitMuhurta.end",
+          "actual": "2027-01-15T07:21:32.759Z",
+          "reference": "2027-01-15T12:52:00+05:30",
+          "deltaSeconds": 27.2,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.start",
+          "actual": "2027-01-15T05:41:38.724Z",
+          "reference": "2027-01-15T11:12:00+05:30",
+          "deltaSeconds": 21.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "rahuKalam.end",
+          "actual": "2027-01-15T07:00:30.857Z",
+          "reference": "2027-01-15T12:31:00+05:30",
+          "deltaSeconds": 29.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.start",
+          "actual": "2027-01-15T09:38:15.122Z",
+          "reference": "2027-01-15T15:08:00+05:30",
+          "deltaSeconds": 15.1,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "yamagandam.end",
+          "actual": "2027-01-15T10:57:07.255Z",
+          "reference": "2027-01-15T16:27:00+05:30",
+          "deltaSeconds": 7.3,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.start",
+          "actual": "2027-01-15T03:03:54.458Z",
+          "reference": "2027-01-15T08:34:00+05:30",
+          "deltaSeconds": 5.5,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "gulikaKalam.end",
+          "actual": "2027-01-15T04:22:46.591Z",
+          "reference": "2027-01-15T09:53:00+05:30",
+          "deltaSeconds": 13.4,
+          "toleranceSeconds": 120,
+          "passed": true
+        },
+        {
+          "field": "amantaMonth",
+          "actual": "Paush",
+          "reference": "Pausha",
+          "passed": true
+        },
+        {
+          "field": "purnimantaMonth",
+          "actual": "Paush",
+          "reference": "Pausha",
+          "passed": true
+        },
+        {
+          "field": "vikramSamvat",
+          "actual": 2083,
+          "reference": 2083,
+          "passed": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "retrievedOn": "2026-10-31",
+  "note": "Manually recorded factual date and timing samples. Minute-resolution references; no full-calendar certification.",
+  "cases": [
+    { "city":"New Delhi", "lat":28.6139, "lon":77.209, "tz":"Asia/Kolkata", "month":"2026-11", "tradition":"smarta", "name":"Rama Ekadashi", "date":"2026-11-05", "paranaDate":"2026-11-06", "paranaStart":"2026-11-06T06:37:00+05:30", "paranaEnd":"2026-11-06T08:48:00+05:30", "source":"https://www.drikpanchang.com/ekadashis/rama/rama-ekadashi-date-time.html?year=2026&geoname-id=1261481" },
+    { "city":"New Delhi", "lat":28.6139, "lon":77.209, "tz":"Asia/Kolkata", "month":"2026-11", "tradition":"smarta", "name":"Devutthana Ekadashi", "date":"2026-11-20", "paranaDate":"2026-11-21", "paranaStart":"2026-11-21T13:11:00+05:30", "paranaEnd":"2026-11-21T15:18:00+05:30", "source":"https://www.drikpanchang.com/ekadashis/prabodhini/prabodhini-ekadashi-date-time.html?year=2026&geoname-id=1261481" },
+    { "city":"New Delhi", "lat":28.6139, "lon":77.209, "tz":"Asia/Kolkata", "month":"2026-11", "tradition":"vaishnava", "name":"Devutthana Ekadashi", "date":"2026-11-21", "paranaDate":"2026-11-22", "paranaStart":"2026-11-22T06:49:00+05:30", "paranaEnd":"2026-11-22T08:56:00+05:30", "source":"https://www.drikpanchang.com/ekadashis/prabodhini/prabodhini-ekadashi-date-time.html?year=2026&geoname-id=1261481" },
+    { "city":"New Delhi", "lat":28.6139, "lon":77.209, "tz":"Asia/Kolkata", "month":"2026-10", "name":"Pradosh Vrat", "date":"2026-10-23", "source":"https://www.drikpanchang.com/vrats/pradoshdates.html?year=2026&geoname-id=1261481" },
+    { "city":"New Delhi", "lat":28.6139, "lon":77.209, "tz":"Asia/Kolkata", "month":"2026-11", "name":"Pradosh Vrat", "date":"2026-11-06", "source":"https://www.drikpanchang.com/vrats/pradoshdates.html?year=2026&geoname-id=1261481" },
+    { "city":"New Delhi", "lat":28.6139, "lon":77.209, "tz":"Asia/Kolkata", "month":"2026-11", "name":"Diwali · Lakshmi Puja", "date":"2026-11-08", "windowStart":"2026-11-08T17:54:00+05:30", "windowEnd":"2026-11-08T19:50:00+05:30", "source":"https://www.drikpanchang.com/festivals/lakshmipuja/festivals-lakshmipuja-timings.html?year=2026&geoname-id=1261481" },
+    { "city":"New Delhi", "lat":28.6139, "lon":77.209, "tz":"Asia/Kolkata", "month":"2026-09", "name":"Ganesh Chaturthi", "date":"2026-09-14", "windowStart":"2026-09-14T11:02:00+05:30", "windowEnd":"2026-09-14T13:31:00+05:30", "source":"https://www.drikpanchang.com/festivals/ganesh-chaturthi/ganesh-chaturthi-date-time.html?year=2026&geoname-id=1261481" },
+    { "city":"Mumbai", "lat":19.076, "lon":72.8777, "tz":"Asia/Kolkata", "month":"2026-10", "name":"Pradosh Vrat", "date":"2026-10-23", "source":"https://www.drikpanchang.com/marathi/panchang/marathi-month-panchang.html?year=2026&geoname-id=1275339" },
+    { "city":"Mumbai", "lat":19.076, "lon":72.8777, "tz":"Asia/Kolkata", "month":"2026-10", "name":"Sharad Purnima · Kojagari", "date":"2026-10-25", "source":"https://www.drikpanchang.com/marathi/panchang/marathi-month-panchang.html?year=2026&geoname-id=1275339" },
+    { "city":"Mumbai", "lat":19.076, "lon":72.8777, "tz":"Asia/Kolkata", "month":"2026-10", "name":"Sankashti Chaturthi", "date":"2026-10-29", "source":"https://www.drikpanchang.com/marathi/panchang/marathi-month-panchang.html?year=2026&geoname-id=1275339" }
+  ]
+}

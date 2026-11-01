@@ -1,0 +1,46 @@
+{
+  "name": "hindu-panchang",
+  "version": "0.1.0",
+  "private": true,
+  "license": "AGPL-3.0-or-later",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@photostructure/tz-lookup": "^11.7.0",
+    "@types/marked": "^5.0.2",
+    "@types/suncalc": "^1.9.2",
+    "@types/three": "^0.184.1",
+    "astronomy-engine": "^2.1.19",
+    "chart.js": "^4.5.1",
+    "date-fns": "^4.4.0",
+    "framer-motion": "^12.42.2",
+    "lucide-react": "^1.31.0",
+    "marked": "^18.0.4",
+    "next": "16.4.3",
+    "react": "19.2.4",
+    "react-chartjs-2": "^5.3.1",
+    "react-dom": "19.2.4",
+    "suncalc": "^2.0.0",
+    "sweph": "^2.10.3-8",
+    "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.5.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.3",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^3.4.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5"
+  }
+}

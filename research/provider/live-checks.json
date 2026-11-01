@@ -1,0 +1,298 @@
+{
+  "checkedAt": "2026-10-31T18:59:00.009Z",
+  "provider": "Prokerala",
+  "scope": "Three live daily requests; two cities; only daily core, not festivals/parana. These are not zero-error certification.",
+  "cases": [
+    {
+      "city": "New Delhi",
+      "date": "2026-11-01",
+      "lat": "28.6139",
+      "lon": "77.209",
+      "sunrise": "center",
+      "http": 200,
+      "status": "matched",
+      "fetchedAt": "2026-10-31T18:56:44.184Z",
+      "cached": true,
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "local": "Saptami",
+          "reference": "Saptami",
+          "matches": true
+        },
+        {
+          "field": "tithi.end",
+          "local": "2026-11-01T09:22:11.245Z",
+          "reference": "2026-11-01T09:22:11.000Z",
+          "matches": true,
+          "deltaSeconds": 0.245,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "nakshatra.name",
+          "local": "Pushya",
+          "reference": "Pushya",
+          "matches": true
+        },
+        {
+          "field": "nakshatra.end",
+          "local": "2026-11-01T23:00:53.315Z",
+          "reference": "2026-11-01T23:00:39.000Z",
+          "matches": true,
+          "deltaSeconds": 14.315,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "yoga.name",
+          "local": "Sadhya",
+          "reference": "Sadhya",
+          "matches": true
+        },
+        {
+          "field": "yoga.end",
+          "local": "2026-11-01T09:09:27.475Z",
+          "reference": "2026-11-01T09:09:01.000Z",
+          "matches": true,
+          "deltaSeconds": 26.475,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "karana.name",
+          "local": "Bava",
+          "reference": "Bava",
+          "matches": true
+        },
+        {
+          "field": "karana.end",
+          "local": "2026-11-01T09:22:11.245Z",
+          "reference": "2026-11-01T09:22:11.000Z",
+          "matches": true,
+          "deltaSeconds": 0.245,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "tithi.paksha",
+          "local": "Krishna Paksha",
+          "reference": "Krishna Paksha",
+          "matches": true
+        },
+        {
+          "field": "vara",
+          "local": "Sunday",
+          "reference": "Sunday",
+          "matches": true
+        },
+        {
+          "field": "sunrise",
+          "local": "2026-11-01T01:06:54.875Z",
+          "reference": "2026-11-01T01:06:54.000Z",
+          "matches": true,
+          "deltaSeconds": 0.875,
+          "toleranceSeconds": 90
+        },
+        {
+          "field": "sunset",
+          "local": "2026-11-01T12:02:14.179Z",
+          "reference": "2026-11-01T12:02:15.000Z",
+          "matches": true,
+          "deltaSeconds": 0.821,
+          "toleranceSeconds": 90
+        }
+      ]
+    },
+    {
+      "city": "Bengaluru",
+      "date": "2026-11-01",
+      "lat": "12.9716",
+      "lon": "77.5946",
+      "sunrise": "center",
+      "http": 200,
+      "status": "matched",
+      "fetchedAt": "2026-10-31T18:58:59.889Z",
+      "cached": false,
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "local": "Saptami",
+          "reference": "Saptami",
+          "matches": true
+        },
+        {
+          "field": "tithi.end",
+          "local": "2026-11-01T09:22:11.075Z",
+          "reference": "2026-11-01T09:22:11.000Z",
+          "matches": true,
+          "deltaSeconds": 0.075,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "nakshatra.name",
+          "local": "Pushya",
+          "reference": "Pushya",
+          "matches": true
+        },
+        {
+          "field": "nakshatra.end",
+          "local": "2026-11-01T23:00:53.365Z",
+          "reference": "2026-11-01T23:00:39.000Z",
+          "matches": true,
+          "deltaSeconds": 14.365,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "yoga.name",
+          "local": "Sadhya",
+          "reference": "Sadhya",
+          "matches": true
+        },
+        {
+          "field": "yoga.end",
+          "local": "2026-11-01T09:09:27.525Z",
+          "reference": "2026-11-01T09:09:01.000Z",
+          "matches": true,
+          "deltaSeconds": 26.525,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "karana.name",
+          "local": "Bava",
+          "reference": "Bava",
+          "matches": true
+        },
+        {
+          "field": "karana.end",
+          "local": "2026-11-01T09:22:11.075Z",
+          "reference": "2026-11-01T09:22:11.000Z",
+          "matches": true,
+          "deltaSeconds": 0.075,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "tithi.paksha",
+          "local": "Krishna Paksha",
+          "reference": "Krishna Paksha",
+          "matches": true
+        },
+        {
+          "field": "vara",
+          "local": "Sunday",
+          "reference": "Sunday",
+          "matches": true
+        },
+        {
+          "field": "sunrise",
+          "local": "2026-11-01T00:46:45.330Z",
+          "reference": "2026-11-01T00:46:45.000Z",
+          "matches": true,
+          "deltaSeconds": 0.33,
+          "toleranceSeconds": 90
+        },
+        {
+          "field": "sunset",
+          "local": "2026-11-01T12:19:30.088Z",
+          "reference": "2026-11-01T12:19:30.000Z",
+          "matches": true,
+          "deltaSeconds": 0.088,
+          "toleranceSeconds": 90
+        }
+      ]
+    },
+    {
+      "city": "New Delhi",
+      "date": "2026-11-01",
+      "lat": "28.6139",
+      "lon": "77.209",
+      "sunrise": "edges",
+      "http": 200,
+      "status": "convention-difference",
+      "fetchedAt": "2026-10-31T18:56:44.184Z",
+      "cached": true,
+      "comparisons": [
+        {
+          "field": "tithi.name",
+          "local": "Saptami",
+          "reference": "Saptami",
+          "matches": true
+        },
+        {
+          "field": "tithi.end",
+          "local": "2026-11-01T09:22:11.053Z",
+          "reference": "2026-11-01T09:22:11.000Z",
+          "matches": true,
+          "deltaSeconds": 0.053,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "nakshatra.name",
+          "local": "Pushya",
+          "reference": "Pushya",
+          "matches": true
+        },
+        {
+          "field": "nakshatra.end",
+          "local": "2026-11-01T23:00:53.343Z",
+          "reference": "2026-11-01T23:00:39.000Z",
+          "matches": true,
+          "deltaSeconds": 14.343,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "yoga.name",
+          "local": "Sadhya",
+          "reference": "Sadhya",
+          "matches": true
+        },
+        {
+          "field": "yoga.end",
+          "local": "2026-11-01T09:09:27.503Z",
+          "reference": "2026-11-01T09:09:01.000Z",
+          "matches": true,
+          "deltaSeconds": 26.503,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "karana.name",
+          "local": "Bava",
+          "reference": "Bava",
+          "matches": true
+        },
+        {
+          "field": "karana.end",
+          "local": "2026-11-01T09:22:11.053Z",
+          "reference": "2026-11-01T09:22:11.000Z",
+          "matches": true,
+          "deltaSeconds": 0.053,
+          "toleranceSeconds": 120
+        },
+        {
+          "field": "tithi.paksha",
+          "local": "Krishna Paksha",
+          "reference": "Krishna Paksha",
+          "matches": true
+        },
+        {
+          "field": "vara",
+          "local": "Sunday",
+          "reference": "Sunday",
+          "matches": true
+        },
+        {
+          "field": "sunrise",
+          "local": "2026-11-01T01:02:58.917Z",
+          "reference": "2026-11-01T01:06:54.000Z",
+          "matches": false,
+          "deltaSeconds": 235.083,
+          "toleranceSeconds": 90
+        },
+        {
+          "field": "sunset",
+          "local": "2026-11-01T12:06:10.104Z",
+          "reference": "2026-11-01T12:02:15.000Z",
+          "matches": false,
+          "deltaSeconds": 235.104,
+          "toleranceSeconds": 90
+        }
+      ]
+    }
+  ]
+}

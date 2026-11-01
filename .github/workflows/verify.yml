@@ -1,0 +1,41 @@
+name: Panchang verification
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      VERCEL: "1"
+      SITE_URL: https://panchang.arpitagarwala.com
+      SITE_INDEXING: "false"
+      PANCHANG_DATA_MODE: local
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx tsx scripts/verify-self-hosted.ts
+      - run: npx tsx scripts/verify-device-location.ts
+      - run: npx tsx scripts/verify-provider.ts
+      - run: npm run build
+      - name: Check production server
+        shell: bash
+        run: |
+          npm start > /tmp/panchang-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent http://localhost:3000/api/panchang/health > /dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/validate-drik.mjs
+          node scripts/verify-panchang.mjs
+          node scripts/verify-observances.mjs
+          node scripts/verify-seo.mjs

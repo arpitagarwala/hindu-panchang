@@ -1,0 +1,13 @@
+Hindu Panchang
+Created and owned by Arpit Agarwala, 2026.
+Project source: https://github.com/arpitagarwala/hindu-panchang
+
+This project's code is provided under GNU Affero General Public License,
+version 3 or (at your option) any later version. See LICENSE.
+Third-party components retain their respective copyrights and licenses.
+See THIRD_PARTY_NOTICES.md and the dependency license files.
+
+The running service offers its corresponding project source through its
+visible Source code link. Build and installation instructions are in README.md,
+VERCEL_DEPLOYMENT.md and SELF_HOSTING.md; dependency versions are locked in
+package-lock.json. No API credentials are necessary for local calculations.

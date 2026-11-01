@@ -1,0 +1,19 @@
+# Free preview only. Choose an always-on paid compute plan for the public SEO launch.
+# Import this repository as a Render Blueprint; no service is created by this file alone.
+services:
+  - type: web
+    name: arpit-panchang
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/panchang/health
+    autoDeployTrigger: "off"
+    envVars:
+      - key: PANCHANG_DATA_MODE
+        value: local
+      - key: SITE_URL
+        value: https://panchang.arpitagarwala.com
+      - key: SITE_INDEXING
+        value: "false"

@@ -1,0 +1,412 @@
+[
+  {
+    "city": "New Delhi",
+    "date": "2026-10-31",
+    "elementNames": {
+      "tithi": {
+        "app": "Shashthi",
+        "reference": "Shashthi"
+      },
+      "nakshatra": {
+        "app": "Ardra",
+        "reference": "Ardra"
+      },
+      "yoga": {
+        "app": "Siddha",
+        "reference": "Siddha"
+      },
+      "karana": {
+        "app": "Vanija",
+        "reference": "Vanija"
+      }
+    },
+    "deltaSeconds": {
+      "tithi.end": 42.0,
+      "nakshatra.end": -5.5,
+      "yoga.end": 12.0,
+      "karana.end": 42.0,
+      "sunrise": 15.3,
+      "sunset": -0.4,
+      "brahmaMuhurta.start": 435.3,
+      "brahmaMuhurta.end": 195.3,
+      "abhijitMuhurta.start": 28.0,
+      "abhijitMuhurta.end": -13.1,
+      "rahuKalam.start": 26.4,
+      "rahuKalam.end": 31.9,
+      "yamagandam.start": -17.0,
+      "yamagandam.end": -11.4,
+      "gulikaKalam.start": 15.3,
+      "gulikaKalam.end": 20.8
+    },
+    "months": {
+      "app": {
+        "name": "Kartik",
+        "samvat": 2083
+      },
+      "referenceAmanta": "Ashwina",
+      "referencePurnimanta": "Kartika"
+    }
+  },
+  {
+    "city": "Bengaluru",
+    "date": "2026-10-31",
+    "elementNames": {
+      "tithi": {
+        "app": "Shashthi",
+        "reference": "Shashthi"
+      },
+      "nakshatra": {
+        "app": "Ardra",
+        "reference": "Ardra"
+      },
+      "yoga": {
+        "app": "Siddha",
+        "reference": "Siddha"
+      },
+      "karana": {
+        "app": "Vanija",
+        "reference": "Vanija"
+      }
+    },
+    "deltaSeconds": {
+      "tithi.end": 42.3,
+      "nakshatra.end": -6.1,
+      "yoga.end": 11.4,
+      "karana.end": 42.3,
+      "sunrise": -2.8,
+      "sunset": 24.3,
+      "brahmaMuhurta.start": 177.2,
+      "brahmaMuhurta.end": 57.2,
+      "abhijitMuhurta.start": -10.1,
+      "abhijitMuhurta.end": 31.7,
+      "rahuKalam.start": 4.0,
+      "rahuKalam.end": -22.6,
+      "yamagandam.start": -15.8,
+      "yamagandam.end": 17.6,
+      "gulikaKalam.start": -2.8,
+      "gulikaKalam.end": 30.6
+    },
+    "months": {
+      "app": {
+        "name": "Kartik",
+        "samvat": 2083
+      },
+      "referenceAmanta": "Ashwina",
+      "referencePurnimanta": "Kartika"
+    }
+  },
+  {
+    "city": "Mumbai",
+    "date": "2026-10-31",
+    "elementNames": {
+      "tithi": {
+        "app": "Shashthi",
+        "reference": "Shashthi"
+      },
+      "nakshatra": {
+        "app": "Ardra",
+        "reference": "Ardra"
+      },
+      "yoga": {
+        "app": "Siddha",
+        "reference": "Siddha"
+      },
+      "karana": {
+        "app": "Vanija",
+        "reference": "Vanija"
+      }
+    },
+    "deltaSeconds": {
+      "tithi.end": 42.1,
+      "nakshatra.end": -5.4,
+      "yoga.end": 11.3,
+      "karana.end": 42.1,
+      "sunrise": 21.1,
+      "sunset": -19.9,
+      "abhijitMuhurta.start": 6.0,
+      "abhijitMuhurta.end": -4.8,
+      "rahuKalam.start": 10.8,
+      "rahuKalam.end": 5.7,
+      "yamagandam.start": -4.5,
+      "yamagandam.end": -9.6,
+      "gulikaKalam.start": 21.1,
+      "gulikaKalam.end": 15.9
+    },
+    "months": {
+      "app": {
+        "name": "Kartik",
+        "samvat": 2083
+      },
+      "referenceAmanta": "Ashwina",
+      "referencePurnimanta": "Kartika"
+    }
+  },
+  {
+    "city": "London",
+    "date": "2026-10-31",
+    "elementNames": {
+      "tithi": {
+        "app": "Shashthi",
+        "reference": "Shashthi"
+      },
+      "nakshatra": {
+        "app": "Punarvasu",
+        "reference": "Punarvasu"
+      },
+      "yoga": {
+        "app": "Siddha",
+        "reference": "Siddha"
+      },
+      "karana": {
+        "app": "Vanija",
+        "reference": "Vanija"
+      }
+    },
+    "deltaSeconds": {
+      "tithi.end": 42.0,
+      "nakshatra.end": 33.0,
+      "yoga.end": 12.0,
+      "karana.end": 42.0,
+      "sunrise": 10.6,
+      "sunset": 22.0,
+      "brahmaMuhurta.start": 1090.6,
+      "brahmaMuhurta.end": 550.6,
+      "abhijitMuhurta.start": 19.9,
+      "abhijitMuhurta.end": 12.7,
+      "rahuKalam.start": -1.5,
+      "rahuKalam.end": -7.6,
+      "yamagandam.start": -19.8,
+      "yamagandam.end": -25.8,
+      "gulikaKalam.start": 10.6,
+      "gulikaKalam.end": 4.5
+    },
+    "months": {
+      "app": {
+        "name": "Kartik",
+        "samvat": 2083
+      },
+      "referenceAmanta": "Ashwina",
+      "referencePurnimanta": "Kartika"
+    }
+  },
+  {
+    "city": "New York City",
+    "date": "2026-10-31",
+    "elementNames": {
+      "tithi": {
+        "app": "Shashthi",
+        "reference": "Shashthi"
+      },
+      "nakshatra": {
+        "app": "Punarvasu",
+        "reference": "Punarvasu"
+      },
+      "yoga": {
+        "app": "Siddha",
+        "reference": "Siddha"
+      },
+      "karana": {
+        "app": "Vanija",
+        "reference": "Vanija"
+      }
+    },
+    "deltaSeconds": {
+      "tithi.end": 41.7,
+      "nakshatra.end": 33.7,
+      "yoga.end": 11.8,
+      "karana.end": 41.7,
+      "sunrise": 17.6,
+      "sunset": 28.0,
+      "brahmaMuhurta.start": 737.6,
+      "brahmaMuhurta.end": 377.6,
+      "abhijitMuhurta.start": 26.5,
+      "abhijitMuhurta.end": 19.2,
+      "rahuKalam.start": 20.2,
+      "rahuKalam.end": -8.5,
+      "yamagandam.start": -5.9,
+      "yamagandam.end": 25.4,
+      "gulikaKalam.start": 17.6,
+      "gulikaKalam.end": -11.1
+    },
+    "months": {
+      "app": {
+        "name": "Kartik",
+        "samvat": 2083
+      },
+      "referenceAmanta": "Ashwina",
+      "referencePurnimanta": "Kartika"
+    }
+  },
+  {
+    "city": "New Delhi",
+    "date": "2026-10-30",
+    "elementNames": {
+      "tithi": {
+        "app": "Panchami",
+        "reference": "Panchami"
+      },
+      "nakshatra": {
+        "app": "Mrigashirsha",
+        "reference": "Mrigashira"
+      },
+      "yoga": {
+        "app": "Shiva",
+        "reference": "Shiva"
+      },
+      "karana": {
+        "app": "Kaulava",
+        "reference": "Kaulava"
+      }
+    },
+    "deltaSeconds": {
+      "tithi.end": 78.6,
+      "nakshatra.end": 19.1,
+      "yoga.end": 14.8,
+      "karana.end": 63.1,
+      "sunrise": 33.0,
+      "sunset": -12.5
+    },
+    "months": {
+      "app": {
+        "name": "Kartik",
+        "samvat": 2083
+      },
+      "referenceAmanta": "Ashwina",
+      "referencePurnimanta": "Kartika"
+    }
+  },
+  {
+    "city": "New Delhi",
+    "date": "2026-11-01",
+    "elementNames": {
+      "tithi": {
+        "app": "Saptami",
+        "reference": "Saptami"
+      },
+      "nakshatra": {
+        "app": "Pushya",
+        "reference": "Pushya"
+      },
+      "yoga": {
+        "app": "Sadhya",
+        "reference": "Sadhya"
+      },
+      "karana": {
+        "app": "Bava",
+        "reference": "Bava"
+      }
+    },
+    "deltaSeconds": {
+      "tithi.end": 64.1,
+      "nakshatra.end": 33.0,
+      "yoga.end": -3.4,
+      "karana.end": 64.1,
+      "sunrise": -2.0,
+      "sunset": 13.0
+    },
+    "months": {
+      "app": {
+        "name": "Kartik",
+        "samvat": 2083
+      },
+      "referenceAmanta": "Ashwina",
+      "referencePurnimanta": "Kartika"
+    }
+  },
+  {
+    "city": "New Delhi",
+    "date": "2025-01-14",
+    "elementNames": {
+      "tithi": {
+        "app": "Pratipada",
+        "reference": "Pratipada"
+      },
+      "nakshatra": {
+        "app": "Punarvasu",
+        "reference": "Punarvasu"
+      },
+      "yoga": {
+        "app": "Vishkambha",
+        "reference": "Vishkambha"
+      },
+      "karana": {
+        "app": "Balava",
+        "reference": "Balava"
+      }
+    },
+    "deltaSeconds": {
+      "tithi.end": 38.2,
+      "nakshatra.end": -5.6,
+      "yoga.end": -53.3,
+      "karana.end": 55.4,
+      "sunrise": 4.5,
+      "sunset": -24.3,
+      "brahmaMuhurta.start": 724.5,
+      "brahmaMuhurta.end": 364.5,
+      "abhijitMuhurta.start": 19.1,
+      "abhijitMuhurta.end": 21.1,
+      "rahuKalam.start": -2.1,
+      "rahuKalam.end": -13.2,
+      "yamagandam.start": -17.7,
+      "yamagandam.end": -28.8,
+      "gulikaKalam.start": 20.1,
+      "gulikaKalam.end": 9.0
+    },
+    "months": {
+      "app": {
+        "name": "Magh",
+        "samvat": 2082
+      },
+      "referenceAmanta": "Pausha",
+      "referencePurnimanta": "Magha"
+    }
+  },
+  {
+    "city": "New Delhi",
+    "date": "2027-01-15",
+    "elementNames": {
+      "tithi": {
+        "app": "Saptami",
+        "reference": "Saptami"
+      },
+      "nakshatra": {
+        "app": "Revati",
+        "reference": "Revati"
+      },
+      "yoga": {
+        "app": "Shiva",
+        "reference": "Shiva"
+      },
+      "karana": {
+        "app": "Vanija",
+        "reference": "Vanija"
+      }
+    },
+    "deltaSeconds": {
+      "tithi.end": 51.5,
+      "nakshatra.end": -9.2,
+      "yoga.end": -27.9,
+      "karana.end": 51.5,
+      "sunrise": 1.8,
+      "sunset": 1.6,
+      "brahmaMuhurta.start": 721.8,
+      "brahmaMuhurta.end": 361.8,
+      "abhijitMuhurta.start": 29.7,
+      "abhijitMuhurta.end": -26.3,
+      "rahuKalam.start": -20.7,
+      "rahuKalam.end": -28.3,
+      "yamagandam.start": 16.7,
+      "yamagandam.end": 9.1,
+      "gulikaKalam.start": -5.7,
+      "gulikaKalam.end": -13.2
+    },
+    "months": {
+      "app": {
+        "name": "Magh",
+        "samvat": 2084
+      },
+      "referenceAmanta": "Pausha",
+      "referencePurnimanta": "Pausha"
+    }
+  }
+]

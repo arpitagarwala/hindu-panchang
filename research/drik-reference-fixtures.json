@@ -1,0 +1,461 @@
+{
+  "retrievedOn": "2026-10-31",
+  "provider": "Drik Panchang",
+  "sampling": "Nine manually inspected factual records, five city locations; not a comprehensive certification.",
+  "coordinateNote": "Coordinates are app test locations, not asserted to be the exact Drik city centroids. Source records explicitly displayed the named city/date. Source URLs without a date are dynamic; datedPermalink includes both date and city to support later review.",
+  "referencePrecision": "Published times are minute-resolution; do not claim second-level comparison accuracy.",
+  "sunriseConvention": "Current Drik Settings says Edges is default. The older Hindu Sunrise FAQ describes geometric center and legacy behavior. Sample results align with edge/refraction SunCalc solar times.",
+  "conventionSources": [
+    "https://www.drikpanchang.com/settings/drikpanchang-settings.html",
+    "https://www.drikpanchang.com/faq/faq-ans2.html"
+  ],
+  "recommendedToleranceSeconds": {
+    "elementEnd": 120,
+    "solar": 90,
+    "window": 120
+  },
+  "cases": [
+    {
+      "city": "New Delhi",
+      "date": "2026-10-31",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "timeZone": "Asia/Kolkata",
+      "reference": {
+        "tithi": {
+          "name": "Shashthi",
+          "end": "2026-10-31T16:57:00+05:30"
+        },
+        "nakshatra": {
+          "name": "Ardra",
+          "end": "2026-10-31T07:12:00+05:30"
+        },
+        "yoga": {
+          "name": "Siddha",
+          "end": "2026-10-31T17:31:00+05:30"
+        },
+        "karana": {
+          "name": "Vanija",
+          "end": "2026-10-31T16:57:00+05:30"
+        },
+        "sunrise": "2026-10-31T06:32:00+05:30",
+        "sunset": "2026-10-31T17:37:00+05:30",
+        "amantaMonth": "Ashwina",
+        "purnimantaMonth": "Kartika",
+        "brahmaMuhurta": {
+          "start": "2026-10-31T04:49:00+05:30",
+          "end": "2026-10-31T05:41:00+05:30"
+        },
+        "abhijitMuhurta": {
+          "start": "2026-10-31T11:42:00+05:30",
+          "end": "2026-10-31T12:27:00+05:30"
+        },
+        "rahuKalam": {
+          "start": "2026-10-31T09:18:00+05:30",
+          "end": "2026-10-31T10:41:00+05:30"
+        },
+        "yamagandam": {
+          "start": "2026-10-31T13:28:00+05:30",
+          "end": "2026-10-31T14:51:00+05:30"
+        },
+        "gulikaKalam": {
+          "start": "2026-10-31T06:32:00+05:30",
+          "end": "2026-10-31T07:55:00+05:30"
+        },
+        "vikramSamvat": 2083
+      },
+      "sourceUrl": "https://www.drikpanchang.com/panchang/day-panchang.html?geoname-id=1261481",
+      "datedPermalink": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=1261481",
+      "sourceObservedCity": "New Delhi",
+      "sourcePrecisionSeconds": 60
+    },
+    {
+      "city": "Bengaluru",
+      "date": "2026-10-31",
+      "latitude": 12.9716,
+      "longitude": 77.5946,
+      "timeZone": "Asia/Kolkata",
+      "reference": {
+        "tithi": {
+          "name": "Shashthi",
+          "end": "2026-10-31T16:57:00+05:30"
+        },
+        "nakshatra": {
+          "name": "Ardra",
+          "end": "2026-10-31T07:12:00+05:30"
+        },
+        "yoga": {
+          "name": "Siddha",
+          "end": "2026-10-31T17:31:00+05:30"
+        },
+        "karana": {
+          "name": "Vanija",
+          "end": "2026-10-31T16:57:00+05:30"
+        },
+        "sunrise": "2026-10-31T06:13:00+05:30",
+        "sunset": "2026-10-31T17:53:00+05:30",
+        "amantaMonth": "Ashwina",
+        "purnimantaMonth": "Kartika",
+        "brahmaMuhurta": {
+          "start": "2026-10-31T04:34:00+05:30",
+          "end": "2026-10-31T05:24:00+05:30"
+        },
+        "abhijitMuhurta": {
+          "start": "2026-10-31T11:40:00+05:30",
+          "end": "2026-10-31T12:26:00+05:30"
+        },
+        "rahuKalam": {
+          "start": "2026-10-31T09:08:00+05:30",
+          "end": "2026-10-31T10:36:00+05:30"
+        },
+        "yamagandam": {
+          "start": "2026-10-31T13:31:00+05:30",
+          "end": "2026-10-31T14:58:00+05:30"
+        },
+        "gulikaKalam": {
+          "start": "2026-10-31T06:13:00+05:30",
+          "end": "2026-10-31T07:40:00+05:30"
+        },
+        "vikramSamvat": 2083
+      },
+      "sourceUrl": "https://www.drikpanchang.com/panchang/day-panchang.html?geoname-id=1277333",
+      "datedPermalink": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=1277333",
+      "sourceObservedCity": "Bengaluru",
+      "sourcePrecisionSeconds": 60
+    },
+    {
+      "city": "Mumbai",
+      "date": "2026-10-31",
+      "latitude": 19.076,
+      "longitude": 72.8777,
+      "timeZone": "Asia/Kolkata",
+      "reference": {
+        "tithi": {
+          "name": "Shashthi",
+          "end": "2026-10-31T16:57:00+05:30"
+        },
+        "nakshatra": {
+          "name": "Ardra",
+          "end": "2026-10-31T07:12:00+05:30"
+        },
+        "yoga": {
+          "name": "Siddha",
+          "end": "2026-10-31T17:31:00+05:30"
+        },
+        "karana": {
+          "name": "Vanija",
+          "end": "2026-10-31T16:57:00+05:30"
+        },
+        "sunrise": "2026-10-31T06:38:00+05:30",
+        "sunset": "2026-10-31T18:06:00+05:30",
+        "amantaMonth": "Ashwina",
+        "purnimantaMonth": "Kartika",
+        "abhijitMuhurta": {
+          "start": "2026-10-31T11:59:00+05:30",
+          "end": "2026-10-31T12:45:00+05:30"
+        },
+        "rahuKalam": {
+          "start": "2026-10-31T09:30:00+05:30",
+          "end": "2026-10-31T10:56:00+05:30"
+        },
+        "yamagandam": {
+          "start": "2026-10-31T13:48:00+05:30",
+          "end": "2026-10-31T15:14:00+05:30"
+        },
+        "gulikaKalam": {
+          "start": "2026-10-31T06:38:00+05:30",
+          "end": "2026-10-31T08:04:00+05:30"
+        },
+        "vikramSamvat": 2083
+      },
+      "sourceUrl": "https://www.drikpanchang.com/panchang/month-panchang.html?geoname-id=1275339",
+      "datedPermalink": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=1275339",
+      "sourceObservedCity": "Mumbai",
+      "sourcePrecisionSeconds": 60
+    },
+    {
+      "city": "London",
+      "date": "2026-10-31",
+      "latitude": 51.5074,
+      "longitude": -0.1278,
+      "timeZone": "Europe/London",
+      "reference": {
+        "tithi": {
+          "name": "Shashthi",
+          "end": "2026-10-31T11:27:00+00:00"
+        },
+        "nakshatra": {
+          "name": "Punarvasu",
+          "end": "2026-11-01T00:09:00+00:00"
+        },
+        "yoga": {
+          "name": "Siddha",
+          "end": "2026-10-31T12:01:00+00:00"
+        },
+        "karana": {
+          "name": "Vanija",
+          "end": "2026-10-31T11:27:00+00:00"
+        },
+        "sunrise": "2026-10-31T06:52:00+00:00",
+        "sunset": "2026-10-31T16:35:00+00:00",
+        "amantaMonth": "Ashwina",
+        "purnimantaMonth": "Kartika",
+        "brahmaMuhurta": {
+          "start": "2026-10-31T04:58:00+00:00",
+          "end": "2026-10-31T05:55:00+00:00"
+        },
+        "abhijitMuhurta": {
+          "start": "2026-10-31T11:24:00+00:00",
+          "end": "2026-10-31T12:03:00+00:00"
+        },
+        "rahuKalam": {
+          "start": "2026-10-31T09:18:00+00:00",
+          "end": "2026-10-31T10:31:00+00:00"
+        },
+        "yamagandam": {
+          "start": "2026-10-31T12:57:00+00:00",
+          "end": "2026-10-31T14:10:00+00:00"
+        },
+        "gulikaKalam": {
+          "start": "2026-10-31T06:52:00+00:00",
+          "end": "2026-10-31T08:05:00+00:00"
+        },
+        "vikramSamvat": 2083
+      },
+      "sourceUrl": "https://www.drikpanchang.com/panchang/day-panchang.html?geoname-id=2643743",
+      "datedPermalink": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=2643743",
+      "sourceObservedCity": "London",
+      "sourcePrecisionSeconds": 60
+    },
+    {
+      "city": "New York City",
+      "date": "2026-10-31",
+      "latitude": 40.7128,
+      "longitude": -74.006,
+      "timeZone": "America/New_York",
+      "reference": {
+        "tithi": {
+          "name": "Shashthi",
+          "end": "2026-10-31T07:27:00-04:00"
+        },
+        "nakshatra": {
+          "name": "Punarvasu",
+          "end": "2026-10-31T20:09:00-04:00"
+        },
+        "yoga": {
+          "name": "Siddha",
+          "end": "2026-10-31T08:01:00-04:00"
+        },
+        "karana": {
+          "name": "Vanija",
+          "end": "2026-10-31T07:27:00-04:00"
+        },
+        "sunrise": "2026-10-31T07:25:00-04:00",
+        "sunset": "2026-10-31T17:53:00-04:00",
+        "amantaMonth": "Ashwina",
+        "purnimantaMonth": "Kartika",
+        "brahmaMuhurta": {
+          "start": "2026-10-31T05:37:00-04:00",
+          "end": "2026-10-31T06:31:00-04:00"
+        },
+        "abhijitMuhurta": {
+          "start": "2026-10-31T12:18:00-04:00",
+          "end": "2026-10-31T13:00:00-04:00"
+        },
+        "rahuKalam": {
+          "start": "2026-10-31T10:02:00-04:00",
+          "end": "2026-10-31T11:21:00-04:00"
+        },
+        "yamagandam": {
+          "start": "2026-10-31T13:58:00-04:00",
+          "end": "2026-10-31T15:16:00-04:00"
+        },
+        "gulikaKalam": {
+          "start": "2026-10-31T07:25:00-04:00",
+          "end": "2026-10-31T08:44:00-04:00"
+        },
+        "vikramSamvat": 2083
+      },
+      "sourceUrl": "https://www.drikpanchang.com/panchang/day-panchang.html?geoname-id=5128581",
+      "datedPermalink": "https://www.drikpanchang.com/panchang/day-panchang.html?date=31/10/2026&geoname-id=5128581",
+      "sourceObservedCity": "New York City",
+      "sourcePrecisionSeconds": 60
+    },
+    {
+      "city": "New Delhi",
+      "date": "2026-10-30",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "timeZone": "Asia/Kolkata",
+      "reference": {
+        "tithi": {
+          "name": "Panchami",
+          "end": "2026-10-30T19:24:00+05:30"
+        },
+        "nakshatra": {
+          "name": "Mrigashira",
+          "end": "2026-10-30T09:04:00+05:30"
+        },
+        "yoga": {
+          "name": "Shiva",
+          "end": "2026-10-30T20:41:00+05:30"
+        },
+        "karana": {
+          "name": "Kaulava",
+          "end": "2026-10-30T08:45:00+05:30"
+        },
+        "sunrise": "2026-10-30T06:31:00+05:30",
+        "sunset": "2026-10-30T17:38:00+05:30",
+        "amantaMonth": "Ashwina",
+        "purnimantaMonth": "Kartika",
+        "vikramSamvat": 2083
+      },
+      "sourceUrl": "https://www.drikpanchang.com/panchang/day-panchang.html?date=30/10/2026",
+      "datedPermalink": "https://www.drikpanchang.com/panchang/day-panchang.html?date=30/10/2026&geoname-id=1261481",
+      "sourceObservedCity": "New Delhi",
+      "sourcePrecisionSeconds": 60
+    },
+    {
+      "city": "New Delhi",
+      "date": "2026-11-01",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "timeZone": "Asia/Kolkata",
+      "reference": {
+        "tithi": {
+          "name": "Saptami",
+          "end": "2026-11-01T14:51:00+05:30"
+        },
+        "nakshatra": {
+          "name": "Pushya",
+          "end": "2026-11-02T04:30:00+05:30"
+        },
+        "yoga": {
+          "name": "Sadhya",
+          "end": "2026-11-01T14:39:00+05:30"
+        },
+        "karana": {
+          "name": "Bava",
+          "end": "2026-11-01T14:51:00+05:30"
+        },
+        "sunrise": "2026-11-01T06:33:00+05:30",
+        "sunset": "2026-11-01T17:36:00+05:30",
+        "amantaMonth": "Ashwina",
+        "purnimantaMonth": "Kartika",
+        "vikramSamvat": 2083
+      },
+      "sourceUrl": "https://www.drikpanchang.com/panchang/day-panchang.html?date=01/11/2026",
+      "datedPermalink": "https://www.drikpanchang.com/panchang/day-panchang.html?date=01/11/2026&geoname-id=1261481",
+      "sourceObservedCity": "New Delhi",
+      "sourcePrecisionSeconds": 60
+    },
+    {
+      "city": "New Delhi",
+      "date": "2025-01-14",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "timeZone": "Asia/Kolkata",
+      "reference": {
+        "tithi": {
+          "name": "Pratipada",
+          "end": "2025-01-15T03:21:00+05:30"
+        },
+        "nakshatra": {
+          "name": "Punarvasu",
+          "end": "2025-01-14T10:17:00+05:30"
+        },
+        "yoga": {
+          "name": "Vishkambha",
+          "end": "2025-01-15T02:59:00+05:30"
+        },
+        "karana": {
+          "name": "Balava",
+          "end": "2025-01-14T15:34:00+05:30"
+        },
+        "sunrise": "2025-01-14T07:15:00+05:30",
+        "sunset": "2025-01-14T17:46:00+05:30",
+        "amantaMonth": "Pausha",
+        "purnimantaMonth": "Magha",
+        "brahmaMuhurta": {
+          "start": "2025-01-14T05:27:00+05:30",
+          "end": "2025-01-14T06:21:00+05:30"
+        },
+        "abhijitMuhurta": {
+          "start": "2025-01-14T12:09:00+05:30",
+          "end": "2025-01-14T12:51:00+05:30"
+        },
+        "rahuKalam": {
+          "start": "2025-01-14T15:08:00+05:30",
+          "end": "2025-01-14T16:27:00+05:30"
+        },
+        "yamagandam": {
+          "start": "2025-01-14T09:53:00+05:30",
+          "end": "2025-01-14T11:12:00+05:30"
+        },
+        "gulikaKalam": {
+          "start": "2025-01-14T12:30:00+05:30",
+          "end": "2025-01-14T13:49:00+05:30"
+        },
+        "vikramSamvat": 2081
+      },
+      "sourceUrl": "https://www.drikpanchang.com/panchang/day-panchang.html?date=14/01/2025",
+      "datedPermalink": "https://www.drikpanchang.com/panchang/day-panchang.html?date=14/01/2025&geoname-id=1261481",
+      "sourceObservedCity": "New Delhi",
+      "sourcePrecisionSeconds": 60
+    },
+    {
+      "city": "New Delhi",
+      "date": "2027-01-15",
+      "latitude": 28.6139,
+      "longitude": 77.209,
+      "timeZone": "Asia/Kolkata",
+      "reference": {
+        "tithi": {
+          "name": "Saptami",
+          "end": "2027-01-15T14:13:00+05:30"
+        },
+        "nakshatra": {
+          "name": "Revati",
+          "end": "2027-01-15T23:51:00+05:30"
+        },
+        "yoga": {
+          "name": "Shiva",
+          "end": "2027-01-15T16:18:00+05:30"
+        },
+        "karana": {
+          "name": "Vanija",
+          "end": "2027-01-15T14:13:00+05:30"
+        },
+        "sunrise": "2027-01-15T07:15:00+05:30",
+        "sunset": "2027-01-15T17:46:00+05:30",
+        "amantaMonth": "Pausha",
+        "purnimantaMonth": "Pausha",
+        "brahmaMuhurta": {
+          "start": "2027-01-15T05:27:00+05:30",
+          "end": "2027-01-15T06:21:00+05:30"
+        },
+        "abhijitMuhurta": {
+          "start": "2027-01-15T12:09:00+05:30",
+          "end": "2027-01-15T12:52:00+05:30"
+        },
+        "rahuKalam": {
+          "start": "2027-01-15T11:12:00+05:30",
+          "end": "2027-01-15T12:31:00+05:30"
+        },
+        "yamagandam": {
+          "start": "2027-01-15T15:08:00+05:30",
+          "end": "2027-01-15T16:27:00+05:30"
+        },
+        "gulikaKalam": {
+          "start": "2027-01-15T08:34:00+05:30",
+          "end": "2027-01-15T09:53:00+05:30"
+        },
+        "vikramSamvat": 2083
+      },
+      "sourceUrl": "https://www.drikpanchang.com/panchang/day-panchang.html?date=15/01/2027",
+      "datedPermalink": "https://www.drikpanchang.com/panchang/day-panchang.html?date=15/01/2027&geoname-id=1261481",
+      "sourceObservedCity": "New Delhi",
+      "sourcePrecisionSeconds": 60
+    }
+  ]
+}
