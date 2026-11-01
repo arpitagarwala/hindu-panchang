@@ -117,3 +117,12 @@ Use the Install app menu item (Hindi: ऐप इंस्टॉल करें)
 A service worker provides a small offline reader when a navigation cannot reach the network. Up to 20 daily readings opened online are stored locally with exact date/location/calendar identity, English and Hindi views, original transition/parana times and review warnings. Offline mode does not generate new dates, pretend an old reading is current, or call a lower-quality engine. Users can remove saved offline readings without removing preferences or bookmarks. Browser storage eviction/private browsing can limit offline use.
 
 API responses and Next.js chunks are never cached by this service worker. Offline assets use a content-derived version; `npm run build` regenerates `public/sw.js` via the prebuild script. Online navigations use the network so deployment releases are not mixed with old application bundles. Run `npx tsx scripts/verify-pwa.ts` for manifest/icon, storage-isolation and worker lifecycle tests. `node scripts/generate-pwa-icons.mjs` regenerates the branded PNGs from the existing SVG.
+
+
+### Full-month offline downloads
+
+Choose **Save month offline** below either calendar to download every day's complete readings in one request (`/api/panchang-month?...&detailed=1`). This uses the same Swiss Ephemeris calculations with full element transitions, festival/parana data and 16 day/night Choghadiya slots where sunrise is available. It does not make a separate external-provider check for every day.
+
+Up to three complete date/location/convention month packs are stored separately from the 20 recent daily readings. A fourth pack replaces the oldest; failed, incomplete, cancelled or quota-blocked downloads do not change an earlier saved month. The offline reader provides a month chooser, a festival list with timing details and every daily reading, in English and Hindi. Individual month removal and clearing all offline data leave bookmarks and preferences untouched. Browser storage can still be cleared or evicted by the device.
+
+Run `npx tsx scripts/verify-offline-month.ts` for complete-pack, leap-date, transition, storage and download failure-path checks. Refresh a downloaded pack when the site's calculation rules change; saved packs retain their download timestamps.

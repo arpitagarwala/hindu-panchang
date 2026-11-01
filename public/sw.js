@@ -1,7 +1,7 @@
 /* Only the offline reader and its assets are cached. API responses, HTML app
  * shells and Next.js chunks stay on the network so updates cannot mix releases
  * or silently present saved astronomical data as a fresh calculation. */
-const CACHE = 'panchang-pwa-aa1856138b4ca081';
+const CACHE = 'panchang-pwa-6d2977e598d09e0b';
 const ASSETS = ['/offline.html', '/pwa/offline.js', '/pwa/icon-192.png', '/pwa/icon-512.png', '/pwa/maskable-512.png', '/pwa/apple-touch-icon.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));

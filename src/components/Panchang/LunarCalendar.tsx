@@ -1,11 +1,12 @@
 'use client';
 import { CalendarDays, ChevronLeft, ChevronRight } from 'lucide-react';
+import type { ReactNode } from 'react';
 import type { PanchangResult } from '@/lib/panchang';
 import { dateLabel } from './data';
 import { nameLabel, translator, isHindi } from './locale';
 import s from './PanchangApp.module.css';
 
-export default function LunarCalendar({days,date,today,locale,full=false,error,onMonth,onSelect}:{days:PanchangResult[];date:string;today:string;locale:string;full?:boolean;error?:string;onMonth:(amount:number)=>void;onSelect:(day:string)=>void}) {
+export default function LunarCalendar({days,date,today,locale,full=false,error,onMonth,onSelect,offlineControl}:{days:PanchangResult[];date:string;today:string;locale:string;full?:boolean;error?:string;onMonth:(amount:number)=>void;onSelect:(day:string)=>void;offlineControl?:ReactNode}) {
   const t=translator(locale), month=date.slice(0,7);
   const first=month?new Date(`${month}-01T12:00:00Z`).getUTCDay():0;
   const week=isHindi(locale)?['रवि','सोम','मंगल','बुध','गुरु','शुक्र','शनि']:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
@@ -23,6 +24,7 @@ export default function LunarCalendar({days,date,today,locale,full=false,error,o
         </button>;
       })}
     </div>{!days.length?<p className={s.calendarLoading} role="status">{error?t('The lunar calendar could not load. Please try again.'):t('Calculating lunar dates…')}</p>:null}
+    {offlineControl}
     <p className={s.calendarLegend}>{t('Select a date for details')}</p>
   </section>;
 }

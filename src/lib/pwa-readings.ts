@@ -1,6 +1,7 @@
 import type { PanchangResult } from './panchang';
 import type { CalendarOptions } from './calendar-options';
 import { nameLabel, translator, formatTime } from '@/components/Panchang/locale';
+import { DAY_ORDER, NIGHT_ORDER } from '@/components/Panchang/data';
 
 export const OFFLINE_KEY = 'panchang.offline-readings.v1';
 export const OFFLINE_LIMIT = 20;
@@ -9,7 +10,7 @@ export type OfflineReading = {
   schema: 1; key: string; date: string; savedAt: string; city: {en:string;hi:string};
   convention: string;
   warnings: {en:string[];hi:string[]};
-  views: Record<'en'|'hi', { heading: string; rows: [string,string][]; events: {name:string;details:string[]}[] }>;
+  views: Record<'en'|'hi', { heading: string; rows: [string,string][]; events: {name:string;details:string[]}[]; schedule?:[string,string][] }>;
 };
 export function createOfflineReading(data: PanchangResult, context: ReadingContext): OfflineReading {
   const zoneDate=new Intl.DateTimeFormat('en-CA',{timeZone:context.timeZone,year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(data.date));
@@ -34,7 +35,16 @@ export function createOfflineReading(data: PanchangResult, context: ReadingConte
       ...(event.parana?[`${t('PARANA · BREAKING THE FAST')}: ${event.parana.after?instant(event.parana.after)+(language==='hi'?' के बाद':' onwards'):event.parana.window?range(event.parana.window):t('No automatic window · needs confirmation')}`]:[]),
       ...(event.status==='review-required'||event.parana?.status==='review-required'?[t('Regional review needed')]:[]),
     ]}));
-    return {heading:new Date(`${context.date}T12:00:00Z`).toLocaleDateString(locale,{timeZone:'UTC',dateStyle:'full'}),rows,events};
+    const weekday=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'].indexOf(data.vara.english);
+    const schedule:[string,string][]=[];
+    if(data.solarTimesAvailable&&weekday>=0){
+      for(const night of [false,true]){
+        const begin=Date.parse(night?data.sunset:data.sunrise),end=Date.parse(night?data.nextSunrise||'':data.sunset);
+        if(!Number.isFinite(begin)||!Number.isFinite(end)||end<=begin)continue;
+        (night?NIGHT_ORDER:DAY_ORDER)[weekday].forEach((name,i)=>schedule.push([`${t(night?'Night':'Day')} · ${n(name)}`,`${instant(new Date(begin+(end-begin)*i/8).toISOString())} – ${instant(new Date(begin+(end-begin)*(i+1)/8).toISOString())}`]));
+      }
+    }
+    return {heading:new Date(`${context.date}T12:00:00Z`).toLocaleDateString(locale,{timeZone:'UTC',dateStyle:'full'}),rows,events,schedule};
   };
   const warnings={en:[...(data.boundaryWarnings||[]),...(data.solarTimesAvailable===false?['Sunrise/sunset is unavailable. Solar windows are not available.']:[]),...(data.dataTrust&&data.dataTrust.status!=='local-only'&&data.dataTrust.status!=='matched'?[data.dataTrust.message]:[])],hi:[...(data.boundaryWarnings?.length?['यह तारीख सूर्योदय या परंपरा की सीमा के पास है। स्थानीय पंचांग से पुष्टि करें।']:[]),...(data.solarTimesAvailable===false?['सूर्योदय/सूर्यास्त नहीं है। सूर्य पर आधारित समय उपलब्ध नहीं हैं।']:[]),...(data.dataTrust&&data.dataTrust.status!=='local-only'&&data.dataTrust.status!=='matched'?['स्वतंत्र तुलना की पुष्टि नहीं हुई है। समय और पद्धति की समीक्षा करें।']:[])]};
   return {schema:1,key:[context.date,context.latitude,context.longitude,context.timeZone,context.region,context.monthConvention,context.tradition,context.sunriseConvention].join('|'),date:context.date,savedAt:new Date().toISOString(),city:{en:context.city,hi:nameLabel(context.city,'hi')},convention:[context.timeZone,context.region,context.monthConvention,context.tradition,context.sunriseConvention].join(' · '),warnings,views:{en:view('en'),hi:view('hi')}};

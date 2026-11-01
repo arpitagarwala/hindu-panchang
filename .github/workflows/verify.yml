@@ -27,6 +27,7 @@ jobs:
       - run: npx tsx scripts/verify-provider.ts
       - run: node scripts/build-pwa.mjs
       - run: npx tsx scripts/verify-pwa.ts
+      - run: npx tsx scripts/verify-offline-month.ts
       - run: npm run build
       - name: Check production server
         shell: bash

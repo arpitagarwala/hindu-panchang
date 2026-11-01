@@ -18,6 +18,7 @@ import { detectDeviceLocation } from '@/lib/geo/device-location';
 import ObservanceList from './ObservanceList';
 import { REGIONS, type Region, type MonthConvention, type Tradition, type SunriseConvention } from '@/lib/calendar-options';
 import type { Observance } from '@/lib/observance-types';
+import SaveMonthOffline from '@/components/Pwa/SaveMonthOffline';
 import { InstallAppButton, OfflineNotice } from '@/components/Pwa/PwaProvider';
 import { createOfflineReading, saveOfflineReading } from '@/lib/pwa-readings';
 import s from './PanchangApp.module.css';
@@ -212,7 +213,7 @@ export default function PanchangApp() {
   const upcoming = [...monthObservances, ...futureData.flatMap(p => p.observances || [])].filter(o => o.date >= date).sort((a,b)=>a.date.localeCompare(b.date)).slice(0, 4);
   const isSaved = saved.some(v => v.date === date && Math.abs(v.city.latitude-prefs.city.latitude)<0.000001 && Math.abs(v.city.longitude-prefs.city.longitude)<0.000001);
   function changeMonth(amount: number) { const d = new Date(`${yearMonth}-01T12:00:00Z`); d.setUTCMonth(d.getUTCMonth() + amount); const next = d.toISOString().slice(0,10); if(next >= '1900-01-01' && next <= '2100-12-31') setDate(next); }
-  function calendarPanel(full = false) { return <LunarCalendar days={monthData} date={date} today={today} locale={locale} full={full} error={monthError} onMonth={changeMonth} onSelect={day=>{setDate(day);if(!full)navigate('today');}}/>; }
+  function calendarPanel(full = false) { return <LunarCalendar days={monthData} date={date} today={today} locale={locale} full={full} offlineControl={ready&&yearMonth?<SaveMonthOffline locale={locale} context={{...prefs,month:yearMonth,city:prefs.city.name,latitude:prefs.city.latitude,longitude:prefs.city.longitude}}/>:null} error={monthError} onMonth={changeMonth} onSelect={day=>{setDate(day);if(!full)navigate('today');}}/>; }
   function timingsPanel() {
     if (!data) return null;
     return <section className={s.panel}><div className={s.panelHeading}><h2><Clock3 size={18}/>{t('Make time for what matters')}</h2></div><div className={s.timingGrid}>
@@ -276,7 +277,7 @@ export default function PanchangApp() {
         </>:null}
       </>:null}
       <section className={s.cityDirectory} aria-label={t('Today’s Panchang by city')}><h2>{t('Today’s Panchang by city')}</h2><nav>{SEO_CITIES.map(city=><a key={city.slug} href={`/panchang/${city.slug}`}>{n(city.name)}</a>)}</nav></section>
-      <footer className={s.quietFooter}><nav><button onClick={()=>navigate('learn')}>{t('Learn Panchang')}</button><InstallAppButton locale={locale}/><a href="/privacy">{t('Location & privacy')}</a><a href="https://github.com/arpitagarwala/hindu-panchang">{t('Source code · AGPL')}</a></nav><p>{t('Created and owned by')} <strong>{t('Arpit Agarwala')}</strong> · <a href="https://arpitagarwala.com" target="_blank" rel="noreferrer">arpitagarwala.com</a></p></footer>
+      <footer className={s.quietFooter}><nav><button onClick={()=>navigate('learn')}>{t('Learn Panchang')}</button><InstallAppButton locale={locale}/><a href="/offline.html">{hi?'सहेजे हुए महीने':'Saved offline months'}</a><a href="/privacy">{t('Location & privacy')}</a><a href="https://github.com/arpitagarwala/hindu-panchang">{t('Source code · AGPL')}</a></nav><p>{t('Created and owned by')} <strong>{t('Arpit Agarwala')}</strong> · <a href="https://arpitagarwala.com" target="_blank" rel="noreferrer">arpitagarwala.com</a></p></footer>
     </main></div>
     <dialog ref={dialogRef} className={s.dialog} onCancel={()=>setModal(null)} onClick={event=>{if(event.target===event.currentTarget)setModal(null);}} aria-labelledby="dialog-title"><div className={s.dialogHeader}><h2 id="dialog-title">{t(modal==='location'?'Where are you?':'Settings')}</h2><button className={s.iconButton} aria-label={t('Close dialog')} onClick={()=>setModal(null)}><X size={21}/></button></div>
       {modal==='location'?<LocationPicker current={prefs.city} onSelect={selectCity} locale={locale}/>:<>

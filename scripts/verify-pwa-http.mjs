@@ -22,4 +22,17 @@ check(offlineResponse.headers.get('x-robots-tag')?.includes('noindex'),'Offline 
 const offline=await offlineResponse.text();
 check(offline.includes('/pwa/offline.js')&&offline.includes('Clear offline readings'),'Standalone saved-reading fallback included');
 await get('/pwa/offline.js');await get('/pwa/apple-touch-icon.png');
+const offlineScript=await (await get('/pwa/offline.js')).text();
+check(offlineScript.includes('panchang.offline-months.v1')&&offline.includes('id="months"'),'Offline reader supports full month collections');
+for(const [year,month,count] of [[2026,12,31],[2028,2,29]]){
+  const query=new URLSearchParams({year:String(year),month:String(month),lat:'28.6139',lon:'77.209',tz:'Asia/Kolkata',detailed:'1'});
+  const response=await get(`/api/panchang-month?${query}`),days=await response.json();
+  check(response.headers.get('cache-control')?.includes('no-store'),'Explicit downloads use fresh data');
+  check(days.length===count,'Every day in the month is downloaded');
+  check(days.every(day=>day.tithi.start&&day.tithi.end&&day.nakshatra.end&&day.yoga.end&&day.karana.end),'Full transitions available for every day');
+  check(days.some(day=>day.observances?.length),'Festival data is bundled with the month');
+  const date=`${year}-${String(month).padStart(2,'0')}-01`;
+  const daily=await (await get(`/api/panchang?date=${date}&lat=28.6139&lon=77.209&tz=Asia%2FKolkata`)).json();
+  check(days[0].tithi.end===daily.tithi.end&&days[0].nakshatra.end===daily.nakshatra.end&&days[0].rahuKalam.start===daily.rahuKalam.start,'Offline download agrees with the daily endpoint');
+}
 console.log(`Passed ${checks} deployed PWA metadata, manifest, icon, install-control, service-worker header and offline-reader checks. Native mobile installation still requires a device check.`);
