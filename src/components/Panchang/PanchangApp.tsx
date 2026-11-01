@@ -18,6 +18,8 @@ import { detectDeviceLocation } from '@/lib/geo/device-location';
 import ObservanceList from './ObservanceList';
 import { REGIONS, type Region, type MonthConvention, type Tradition, type SunriseConvention } from '@/lib/calendar-options';
 import type { Observance } from '@/lib/observance-types';
+import { InstallAppButton, OfflineNotice } from '@/components/Pwa/PwaProvider';
+import { createOfflineReading, saveOfflineReading } from '@/lib/pwa-readings';
 import s from './PanchangApp.module.css';
 
 export default function PanchangApp() {
@@ -155,7 +157,11 @@ export default function PanchangApp() {
     if (!ready || !date) return;
     const controller = new AbortController(); setLoading(true); setError(''); setTrustError(undefined); setData(null);
     const params = new URLSearchParams({ lat: String(prefs.city.latitude), lon: String(prefs.city.longitude), tz: prefs.timeZone, date, region:prefs.region, months:prefs.monthConvention, tradition:prefs.tradition, sunrise:prefs.sunriseConvention });
-    fetch(`/api/panchang?${params}`, { signal: controller.signal, cache: 'no-store' }).then(async res => { const result = await res.json(); if (!res.ok) { setTrustError(result.dataTrust); throw new Error(result.error); } return result; }).then(setData).catch(err => { if (err.name !== 'AbortError') setError(err.message || 'Please try again.'); }).finally(() => { if (!controller.signal.aborted) setLoading(false); });
+    fetch(`/api/panchang?${params}`, { signal: controller.signal, cache: 'no-store' }).then(async res => { const result = await res.json(); if (!res.ok) { setTrustError(result.dataTrust); throw new Error(result.error); } return result; }).then((result:PanchangResult)=>{
+      if(controller.signal.aborted)return;
+      setData(result);
+      try {saveOfflineReading(createOfflineReading(result,{date,city:prefs.city.name,latitude:prefs.city.latitude,longitude:prefs.city.longitude,timeZone:prefs.timeZone,hour24:prefs.hour24,region:prefs.region,monthConvention:prefs.monthConvention,tradition:prefs.tradition,sunriseConvention:prefs.sunriseConvention}),localStorage);}catch{/* Calculation works even if storage is unavailable. */}
+    }).catch(err => { if (err.name !== 'AbortError') setError(err.message || 'Please try again.'); }).finally(() => { if (!controller.signal.aborted) setLoading(false); });
     return () => controller.abort();
   }, [ready, date, prefs.city.latitude, prefs.city.longitude, prefs.timeZone, prefs.region, prefs.monthConvention, prefs.tradition, prefs.sunriseConvention, retry]);
   useEffect(() => {
@@ -231,7 +237,7 @@ export default function PanchangApp() {
     <aside className={`${s.sidebar} ${mobileNav?s.sidebarOpen:''}`} aria-label={tr('Main navigation','मुख्य मेनू')}>
       <a className={s.brand} href="/"><span className={s.brandMark}><Sun size={29} strokeWidth={1.4}/></span><span>{t('Panchang')}<small>{tr('YOUR DAILY COMPANION','आपका दैनिक साथी')}</small></span></a>
       <div className={s.navLabel}>{tr('EXPLORE','देखें')}</div><nav>{NAV.map(({id,title,hindi,icon:Icon})=><button key={id} className={`${s.navItem} ${section===id?s.navActive:''}`} onClick={()=>navigate(id)} aria-current={section===id?'page':undefined}><Icon size={19}/><span>{hi?hindi:title}</span>{id==='saved'&&saved.length?<em>{saved.length}</em>:null}{id===section?<span className={s.navDot}/>:null}</button>)}</nav>
-      <div className={s.sidebarDivider}/><a className={s.navItem} href="/jyotish"><Sparkles size={19}/><span>{t('Kundali & Jyotish')}</span><ArrowUpRight size={14}/></a><button className={s.navItem} onClick={()=>setModal('settings')}><Settings2 size={19}/><span>{t('Settings')}</span></button>
+      <div className={s.sidebarDivider}/><a className={s.navItem} href="/jyotish"><Sparkles size={19}/><span>{t('Kundali & Jyotish')}</span><ArrowUpRight size={14}/></a><button className={s.navItem} onClick={()=>setModal('settings')}><Settings2 size={19}/><span>{t('Settings')}</span></button><InstallAppButton locale={locale} className={s.navItem}/>
     </aside>
     {mobileNav?<button aria-label={t('Close navigation')} className={s.navOverlay} onClick={()=>setMobileNav(false)}/>:null}
     <div className={s.workspace}><header className={s.topbar}><div className={s.breadcrumb}><button className={`${s.iconButton} ${s.mobileMenu}`} aria-label={t('Open navigation')} onClick={()=>setMobileNav(true)}><Menu size={21}/></button><strong>{NAV.find(item=>item.id===section)?.[hi?'hindi':'title']}</strong></div>
@@ -239,6 +245,7 @@ export default function PanchangApp() {
     </header>
     <main id="main-content" className={s.main}>
       <h1 className={s.quietTitle}>{section==='today'?t('Today’s Hindu Panchang'):NAV.find(item=>item.id===section)?.[hi?'hindi':'title']}</h1>
+      <OfflineNotice locale={locale}/>
       <div className={s.toolbar}><div className={s.dayControls}><button className={s.iconButton} aria-label={t('Previous day')} disabled={!date||date<='1900-01-01'} onClick={()=>setDate(shiftDay(date,-1))}><ChevronLeft size={17}/></button><label className={s.dateControl}><CalendarDays size={16}/><input aria-label={t('Select date')} type="date" min="1900-01-01" max="2100-12-31" value={date} onChange={e=>{if(e.target.value)setDate(e.target.value);}}/></label><button className={s.iconButton} aria-label={t('Next day')} disabled={!date||date>='2100-12-31'} onClick={()=>setDate(shiftDay(date,1))}><ChevronRight size={17}/></button><button className={`${s.todayButton} ${isToday?s.todaySelected:''}`} onClick={()=>setDate(localDay(prefs.timeZone))}>{t('Today')}</button></div><div className={s.toolbarMeta}><button className={s.iconButton} disabled={!data} aria-label={t('Share Panchang')} onClick={share}><Share2 size={16}/></button><button className={s.iconButton} disabled={!data} aria-label={t('Download calendar event')} onClick={exportDay}><Download size={16}/></button><button className={s.iconButton} disabled={!data} aria-label={t('Print daily Panchang')} onClick={()=>window.print()}><Printer size={17}/></button></div></div>
       {error?<div role="alert" className={s.error}><Info size={20}/><div><strong>{t('We couldn’t calculate this day.')}</strong><p>{hi?'कृपया दूसरी तारीख या स्थान चुनें, अथवा फिर प्रयास करें।':error}</p></div><button className={s.outlineButton} onClick={()=>setRetry(v=>v+1)}>{t('Try again')}</button></div>:null}
       {loading?<div className={s.loading} role="status"><LoaderCircle className={s.spinner} size={27}/><span>{t('Reading the sky for your city…')}</span></div>:null}
@@ -269,7 +276,7 @@ export default function PanchangApp() {
         </>:null}
       </>:null}
       <section className={s.cityDirectory} aria-label={t('Today’s Panchang by city')}><h2>{t('Today’s Panchang by city')}</h2><nav>{SEO_CITIES.map(city=><a key={city.slug} href={`/panchang/${city.slug}`}>{n(city.name)}</a>)}</nav></section>
-      <footer className={s.quietFooter}><nav><button onClick={()=>navigate('learn')}>{t('Learn Panchang')}</button><a href="/privacy">{t('Location & privacy')}</a><a href="https://github.com/arpitagarwala/hindu-panchang">{t('Source code · AGPL')}</a></nav><p>{t('Created and owned by')} <strong>{t('Arpit Agarwala')}</strong> · <a href="https://arpitagarwala.com" target="_blank" rel="noreferrer">arpitagarwala.com</a></p></footer>
+      <footer className={s.quietFooter}><nav><button onClick={()=>navigate('learn')}>{t('Learn Panchang')}</button><InstallAppButton locale={locale}/><a href="/privacy">{t('Location & privacy')}</a><a href="https://github.com/arpitagarwala/hindu-panchang">{t('Source code · AGPL')}</a></nav><p>{t('Created and owned by')} <strong>{t('Arpit Agarwala')}</strong> · <a href="https://arpitagarwala.com" target="_blank" rel="noreferrer">arpitagarwala.com</a></p></footer>
     </main></div>
     <dialog ref={dialogRef} className={s.dialog} onCancel={()=>setModal(null)} onClick={event=>{if(event.target===event.currentTarget)setModal(null);}} aria-labelledby="dialog-title"><div className={s.dialogHeader}><h2 id="dialog-title">{t(modal==='location'?'Where are you?':'Settings')}</h2><button className={s.iconButton} aria-label={t('Close dialog')} onClick={()=>setModal(null)}><X size={21}/></button></div>
       {modal==='location'?<LocationPicker current={prefs.city} onSelect={selectCity} locale={locale}/>:<>

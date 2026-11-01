@@ -1,6 +1,7 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import '@/styles/globals.css';
 import SiteFooter from '@/components/Panchang/SiteFooter';
+import PwaProvider from '@/components/Pwa/PwaProvider';
 import { SITE_URL, SITE_NAME, INDEXING_ENABLED } from '@/lib/site-config';
 
 export const metadata: Metadata = {
@@ -9,6 +10,9 @@ export const metadata: Metadata = {
   description:
     'Today’s Hindu Panchang for your location: Tithi, Nakshatra, sunrise, Rahu Kalam, Choghadiya, festivals, fasting and parana. Personalize your regional calendar.',
   applicationName: 'Panchang',
+  manifest: '/manifest.webmanifest',
+  appleWebApp: { capable: true, title: 'Panchang', statusBarStyle: 'default' },
+  icons: { icon: [{url:'/icon.svg',type:'image/svg+xml'}, {url:'/pwa/icon-192.png',sizes:'192x192',type:'image/png'}], apple: [{url:'/pwa/apple-touch-icon.png',sizes:'180x180',type:'image/png'}] },
   authors: [{ name: 'Arpit Agarwala', url: 'https://arpitagarwala.com' }],
   creator: 'Arpit Agarwala',
   robots: { index: INDEXING_ENABLED, follow: true, googleBot: { index: INDEXING_ENABLED, follow: true, 'max-image-preview': 'large' } },
@@ -23,6 +27,8 @@ export const metadata: Metadata = {
     url: SITE_URL,
   },
 };
+
+export const viewport: Viewport = { width:'device-width', initialScale:1, viewportFit:'cover', themeColor:'#a45b2c' };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -42,8 +48,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        {children}
-        <SiteFooter/>
+        <PwaProvider>{children}<SiteFooter/></PwaProvider>
       </body>
     </html>
   );

@@ -108,3 +108,12 @@ The personal Panchang supports English and Hindi throughout daily readings, astr
 Festival calendars display names directly. The full desktop calendar uses a week grid, while compact and mobile calendars use readable date cards. Festival summaries expose their actual rule's tithi interval separately from the sunrise-sampled daily tithi. Derived following-day events and solar/nakshatra rules do not invent a tithi window.
 
 Daily Gita readings rotate through 36 bundled Sanskrit verses with original brief Hindi and English meanings. The selected civil date determines the verse, and a live view advances at local midnight. Run `npx tsx scripts/verify-reading-experience.ts` for the name, date-rotation and festival-tithi regressions.
+
+
+## Installable PWA
+
+Use the Install app menu item (Hindi: ऐप इंस्टॉल करें), or the browser's Add to Home Screen action, to open Panchang as a standalone home-screen app. The manifest, Android 192/512 icons, maskable icon and Apple touch icon are bundled. iPhone guidance uses Safari → Share → Add to Home Screen. Installation is controlled by the browser and requires HTTPS on the public site.
+
+A service worker provides a small offline reader when a navigation cannot reach the network. Up to 20 daily readings opened online are stored locally with exact date/location/calendar identity, English and Hindi views, original transition/parana times and review warnings. Offline mode does not generate new dates, pretend an old reading is current, or call a lower-quality engine. Users can remove saved offline readings without removing preferences or bookmarks. Browser storage eviction/private browsing can limit offline use.
+
+API responses and Next.js chunks are never cached by this service worker. Offline assets use a content-derived version; `npm run build` regenerates `public/sw.js` via the prebuild script. Online navigations use the network so deployment releases are not mixed with old application bundles. Run `npx tsx scripts/verify-pwa.ts` for manifest/icon, storage-isolation and worker lifecycle tests. `node scripts/generate-pwa-icons.mjs` regenerates the branded PNGs from the existing SVG.
