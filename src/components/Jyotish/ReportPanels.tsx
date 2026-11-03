@@ -11,6 +11,7 @@ import {
   nakshatraHi,
 } from "@/lib/jyotish/knowledge";
 import DivisionalChart from "./DivisionalChart";
+import GemstoneGuide from "./GemstoneGuide";
 import s from "./Jyotish.module.css";
 export type Tab =
   | "reading"
@@ -46,8 +47,7 @@ export default function ReportPanels({
   tab: Tab;
 }) {
   const [varga, setVarga] = useState<VargaType>("D1"),
-    [style, setStyle] = useState<"north" | "south">("north"),
-    [ratti, setRatti] = useState("");
+    [style, setStyle] = useState<"north" | "south">("north");
   const t = (a: string, b: string) => (hi ? b : a),
     tx = (v: Text) => v[hi ? "hi" : "en"],
     planet = (id: string) => (hi ? planetHi[id] || id : id),
@@ -492,120 +492,5 @@ export default function ReportPanels({
       </>
     );
   }
-  return (
-    <section className={s.card}>
-      <h2>{t("Gemstones, with context", "रत्न, सही संदर्भ में")}</h2>
-      <p>
-        {t(
-          "Explore traditional associations and the house ownership behind them. This is not a recommendation to buy or wear a stone. Different schools disagree about suitability, finger, metal and rituals.",
-          "पारंपरिक संबंध और भाव स्वामित्व देखें। यह रत्न खरीदने या पहनने की सलाह नहीं। उपयुक्तता, उँगली, धातु और विधि पर परंपराओं में मतभेद हैं।",
-        )}
-      </p>
-      <p className={s.notice}>
-        {t(
-          "A birth chart cannot establish an effective gemstone dose or guarantee an outcome. This app does not auto-prescribe a ratti weight, blue sapphire, hessonite or cat’s eye. Do not replace medical care or financial planning with gemstones.",
-          "कुंडली से रत्न की प्रभावी मात्रा या परिणाम सुनिश्चित नहीं होता। ऐप अपने-आप रत्ती, नीलम, गोमेद या लहसुनिया पहनने का निर्देश नहीं देता। रत्न से चिकित्सा या आर्थिक योजना की जगह न लें।",
-        )}
-      </p>
-      <div className={s.scroll}>
-        <table className={s.forecast}>
-          <thead>
-            <tr>
-              <th>{t("Graha / stone", "ग्रह / रत्न")}</th>
-              <th>{t("Birth-chart context", "जन्म कुंडली का संदर्भ")}</th>
-              <th>{t("Finger / metal", "उँगली / धातु")}</th>
-              <th>{t("Weekday / symbolism", "वार / प्रतीक")}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.entries(associations).map(([id, a]) => {
-              const owned = report.chart.houses
-                  .filter((h) => h.signLord === id)
-                  .map((h) => h.house),
-                mixed = owned.some((h) => [6, 8, 12].includes(h)),
-                trine = owned.some((h) => [1, 5, 9].includes(h));
-              return (
-                <tr key={id}>
-                  <td>
-                    <strong>{tx(a.stone)}</strong>
-                    <small>{planet(id)}</small>
-                  </td>
-                  <td>
-                    {owned.length
-                      ? `${t("Rules houses", "भाव स्वामी")} ${owned.join(", ")}`
-                      : t(
-                          "No sign ownership in this model",
-                          "इस विधि में राशि स्वामित्व नहीं",
-                        )}
-                    <small
-                      className={mixed || !owned.length ? s.caution : s.support}
-                    >
-                      {mixed
-                        ? t(
-                            "Mixed ownership · avoid automatic strengthening",
-                            "मिश्रित स्वामित्व · स्वतः सुदृढ़ न करें",
-                          )
-                        : trine
-                          ? t(
-                              "Ascendant / trine association · requires full review",
-                              "लग्न / त्रिकोण संबंध · पूर्ण समीक्षा आवश्यक",
-                            )
-                          : t(
-                              "No automatic suitability established",
-                              "स्वतः उपयुक्तता स्थापित नहीं",
-                            )}
-                    </small>
-                  </td>
-                  <td>
-                    {tx(a.finger)}
-                    <small>{tx(a.metal)}</small>
-                  </td>
-                  <td>
-                    {tx(a.day)}
-                    <small>{tx(a.purpose)}</small>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
-      <details open>
-        <summary>{t("Ratti weight converter", "रत्ती वजन परिवर्तक")}</summary>
-        <label className={s.field}>
-          {t(
-            "Weight in jewellery ratti (conversion only)",
-            "ज्वेलरी रत्ती में वजन (केवल रूपांतरण)",
-          )}
-          <input
-            className={s.weight}
-            type="number"
-            min="0.1"
-            max="100"
-            step="0.1"
-            value={ratti}
-            onChange={(e) => setRatti(e.target.value)}
-          />
-        </label>
-        <p>
-          {Number(ratti) > 0 && Number(ratti) <= 100
-            ? `${ratti} ${t("ratti", "रत्ती")} ≈ ${(Number(ratti) * 0.182).toFixed(3)} g ≈ ${(Number(ratti) * 0.91).toFixed(2)} ct`
-            : "—"}
-        </p>
-        <p className={s.muted}>
-          {t(
-            "Illustrative jewellery convention: 1 ratti ≈ 0.182 g (0.91 carat). Ratti standards vary; verify the seller’s conversion and certified carat weight. The input is not a recommended dose or a body-weight formula.",
-            "उदाहरण ज्वेलरी मान: 1 रत्ती ≈ 0.182 ग्राम (0.91 कैरेट)। रत्ती के मान भिन्न हैं; विक्रेता का रूपांतरण और प्रमाणित कैरेट जाँचें। यह अनुशंसित मात्रा या शरीर के वजन का सूत्र नहीं।",
-          )}
-        </p>
-      </details>
-      <h3>{t("What to avoid", "किनसे बचें")}</h3>
-      <p>
-        {t(
-          "Avoid choosing a stone solely because a planet is weak, a dasha is active, or an automated list calls it lucky. This simplified house-ownership screen does not establish which stone you must wear or must never wear.",
-          "केवल कमजोर ग्रह, चालू दशा या स्वचालित “शुभ” सूची से रत्न न चुनें। यह सरल भाव स्वामित्व जाँच तय नहीं करती कि कौन सा रत्न अवश्य पहनें या कभी न पहनें।",
-        )}
-      </p>
-    </section>
-  );
+  return <GemstoneGuide report={report} hi={hi} />;
 }

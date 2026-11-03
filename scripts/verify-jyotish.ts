@@ -18,6 +18,8 @@ import { calculateVimshottariDasha } from "../src/lib/astronomy/dasha";
 import { reportHtml } from "../src/lib/jyotish/export";
 import type { BirthInput } from "../src/lib/jyotish/types";
 import { northLabels } from "../src/lib/jyotish/chart-layout";
+import { gemstoneShortlist } from "../src/lib/jyotish/gemstones";
+import { ZODIAC_SIGNS } from "../src/lib/astronomy/constants";
 let checks = 0;
 function check(value: unknown, message: string) {
   assert.ok(value, message);
@@ -309,6 +311,78 @@ for (const hi of [false, true]) {
     "Bilingual offline report",
   );
 }
+// Published functional-nature examples and shortlist invariants across all lagnas.
+for (let asc = 1; asc <= 12; asc++) {
+  const chart = {
+    ...report.chart,
+    ascendant: {
+      ...report.chart.ascendant,
+      sign: asc,
+      signLord: ZODIAC_SIGNS[asc - 1].lord,
+    },
+    houses: report.chart.houses.map((h, i) => ({
+      ...h,
+      signLord: ZODIAC_SIGNS[(asc - 1 + i) % 12].lord,
+    })),
+  };
+  const list = gemstoneShortlist({ ...report, chart, sensitivity: [] });
+  check(
+    list.recommended.length >= 1 &&
+      list.recommended.length <= 3 &&
+      list.avoid.length >= 1 &&
+      list.avoid.length <= 3,
+    "Each ascendant gets a concise shortlist",
+  );
+  check(
+    !list.recommended.some((p) =>
+      list.avoid.some((a) => a.planet === p.planet),
+    ),
+    "Recommended/avoid never contradict each other",
+  );
+  check(
+    [...list.recommended, ...list.avoid].every(
+      (p) => !["Rahu", "Ketu"].includes(p.planet),
+    ),
+    "Lunar-node stones are not auto-selected",
+  );
+  const yoga: Record<number, string> = {
+    2: "Saturn",
+    4: "Mars",
+    5: "Mars",
+    7: "Saturn",
+    10: "Venus",
+    11: "Venus",
+  };
+  if (yoga[asc])
+    check(
+      list.recommended[0].planet === yoga[asc],
+      "Published yogakaraka leads the shortlist",
+    );
+  if (asc === 3)
+    check(
+      list.recommended.length === 1 && list.recommended[0].planet === "Venus",
+      "Gemini does not fabricate three recommendations",
+    );
+}
+check(
+  gemstoneShortlist({
+    ...report,
+    sensitivity: [{ varga: "D1", changed: true }],
+  }).recommended.length === 0,
+  "Uncertain D1 withholds a misleading shortlist",
+);
+const gemHtml = reportHtml(report, false)
+  .split("<h2>Your gemstone shortlist</h2>")[1]
+  ?.split("</section>")[0];
+check(
+  gemHtml?.includes("Recommended for your chart") &&
+    gemHtml.includes("Not recommended for your chart"),
+  "Offline report has both shortlist groups",
+);
+check(
+  gemHtml && !gemHtml.includes("Ruby") && !gemHtml.includes("Hessonite"),
+  "Offline report excludes stones outside this profile’s shortlist",
+);
 globalThis.fetch = originalFetch;
 console.log(
   `Passed ${checks} Jyotish checks: historical/DST birth times, varga boundaries, report completeness, geography, dasha continuity, no external requests, and escaped bilingual exports. Sample compute: ${(performance.now() - start).toFixed(0)} ms including all test reports.`,

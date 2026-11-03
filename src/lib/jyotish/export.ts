@@ -2,6 +2,7 @@ import type { JyotishReport } from "./types";
 import { associations, planetHi, signHi, nakshatraHi } from "./knowledge";
 import { ZODIAC_SIGNS } from "../astronomy/constants";
 import { northLabels } from "./chart-layout";
+import { gemstoneShortlist } from "./gemstones";
 const escape = (value: unknown) =>
   String(value ?? "").replace(
     /[&<>"']/g,
@@ -35,6 +36,7 @@ export function reportHtml(r: JyotishReport, hi: boolean) {
   const section = (title: string, content: string) =>
     `<section><h2>${escape(title)}</h2>${content}</section>`;
   const a = associations[r.chart.ascendant.signLord];
+  const gems = gemstoneShortlist(r);
   const body = [
     section(
       t("Your reading", "आपका पाठ"),
@@ -135,31 +137,17 @@ export function reportHtml(r: JyotishReport, hi: boolean) {
       )}<p>${t("Shared local Panchang windows, not personalised guarantees. Supportive and caution windows can overlap. No solar windows are invented for polar dates.", "साझा स्थानीय पंचांग समय, व्यक्तिगत गारंटी नहीं। शुभ और सावधानी के समय मिल सकते हैं। ध्रुवीय तिथियों पर सौर समय गढ़े नहीं गए हैं।")}</p>`,
     ),
     section(
-      t(
-        "Gemstone reference · not a prescription",
-        "रत्न संदर्भ · पहनने का निर्देश नहीं",
-      ),
-      `<p>${t("Finger, metal and weekday customs differ. A chart cannot establish an effective gemstone dose, weight or guaranteed benefit. Avoid choosing a stone solely from an active dasha or a weak planet.", "उँगली, धातु और वार की परंपराएँ भिन्न हैं। कुंडली से रत्न की प्रभावी मात्रा, वजन या लाभ सुनिश्चित नहीं होता। केवल सक्रिय दशा या कमजोर ग्रह से रत्न न चुनें।")}</p>${table(
-        [
-          t("Graha / houses ruled", "ग्रह / भाव स्वामित्व"),
-          t("Stone", "रत्न"),
-          t("Finger", "उँगली"),
-          t("Metal", "धातु"),
-          t("Weekday / symbolism", "वार / प्रतीक"),
-        ],
-        Object.entries(associations).map(([id, v]) => [
-          planet(id) +
-            " · " +
-            (r.chart.houses
-              .filter((h) => h.signLord === id)
-              .map((h) => h.house)
-              .join(", ") || "—"),
-          v.stone[lang],
-          v.finger[lang],
-          v.metal[lang],
-          v.day[lang] + " · " + v.purpose[lang],
-        ]),
-      )}<p>${t("Illustrative jewellery conversion only: 1 ratti ≈ 0.182 g ≈ 0.91 ct. Standards vary; verify certified carat weight. This is not a recommended dose.", "केवल उदाहरण ज्वेलरी रूपांतरण: 1 रत्ती ≈ 0.182 ग्राम ≈ 0.91 कैरेट। मान भिन्न हैं; प्रमाणित कैरेट जाँचें। यह अनुशंसित मात्रा नहीं है।")}</p>`,
+      t("Your gemstone shortlist", "आपके लिए चुने हुए रत्न"),
+      gems.uncertain
+        ? `<p>${t("Confirm your birth time before choosing a gemstone: the D1 chart changes within your stated uncertainty.", "रत्न चुनने से पहले जन्म समय की पुष्टि करें: बताई अनिश्चितता में D1 कुंडली बदलती है।")}</p>`
+        : `<h3>${t("Recommended for your chart", "आपकी कुंडली के लिए अनुशंसित")}</h3><p>${t("These are alternatives, not a combination to wear together.", "ये विकल्प हैं, एक साथ पहनने का निर्देश नहीं।")}</p>${gems.recommended
+            .map((pick, i) => {
+              const gem = associations[pick.planet];
+              return `<h4>${i === 0 ? t("Best match", "सबसे उपयुक्त विकल्प") : t("Alternative", "अन्य विकल्प")} · ${escape(gem.stone[lang])}</h4><p>${escape(pick.reason[lang])}</p><p>${escape(pick.context[lang])}</p>${table([t("Finger", "उँगली"), t("Metal", "धातु"), t("Weekday", "वार"), t("Traditional purpose", "पारंपरिक उद्देश्य")], [[gem.finger[lang], gem.metal[lang], gem.day[lang], gem.purpose[lang]]])}${pick.note ? `<p>${escape(pick.note[lang])}</p>` : ""}`;
+            })
+            .join(
+              "",
+            )}<h3>${t("Not recommended for your chart", "आपकी कुंडली के लिए अनुशंसित नहीं")}</h3>${gems.avoid.map((pick) => `<h4>${escape(associations[pick.planet].stone[lang])}</h4><p>${escape(pick.reason[lang])} ${escape(pick.context[lang])}</p>`).join("")}<p>${t("This is a traditional shortlist, not proven benefits or proof that a stone causes harm. Confirm suitability and weight before buying; neutral planets and lunar nodes are omitted. No ratti dose is calculated.", "यह पारंपरिक सूची है, लाभ या हानि का प्रमाण नहीं। खरीदने से पहले उपयुक्तता और वजन की पुष्टि करें; तटस्थ ग्रह और राहु-केतु शामिल नहीं हैं। रत्ती की मात्रा की गणना नहीं होती।")}</p><p>1 ratti ≈ 0.182 g ≈ 0.91 ct</p><p><a href="https://www.vedicastrologer.org/articles/vedic_astro_textbook.pdf#page=178">${t("Method reference: sections 13.2 and 34.2", "विधि संदर्भ: खंड 13.2 और 34.2")}</a></p>`,
     ),
     section(
       t("Birth-time sensitivity", "जन्म समय की संवेदनशीलता"),

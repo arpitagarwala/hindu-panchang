@@ -47,9 +47,23 @@ colour/weekday/direction catalogue contains editorial common-practice associatio
 it is not a measured luck model or a quotation from an authenticated scripture.
 Numerology is separately labelled and uses reduced digit sums of day/full DOB.
 
-The gemstone guide lists conventional stones, fingers, metals, weekdays and
-symbolism. House ownership identifies mixed 6/8/12 ownership for review; it does
-not decide what someone must wear. No automated gemstone purchase, ratti dose,
+The gemstone guide shows up to three recommended alternatives and up to three
+stones not recommended as automatic remedies, with conventional finger, metal,
+weekday and symbolism details. Both the page and offline report use the same
+selector, including for previously saved profiles. Its explicitly selected school
+is P.V.R. Narasimha Rao's functional-nature classification (section 13.2, Table 30)
+and gemstone method (34.2) in
+[Vedic Astrology: An Integrated Approach](https://www.vedicastrologer.org/articles/vedic_astro_textbook.pdf).
+This classification contains school-specific mixed-ownership exceptions; it is
+not replaced by a blanket 6/8/12-house prohibition. Within favourable planets,
+yogakaraka leads, then ascendant/trine priority with a mixed-ownership adjustment;
+an active favourable dasha gives a small ordering preference. Combust/debilitated
+benefic choices show an additional note, not a fabricated guaranteed effect.
+Unfavourable planets are ordered by disclosed house-ownership priorities for a
+maximum of three; this ranking is an editorial shortlist, not a classical dosage
+rule. Neutral planets and lunar nodes are omitted. D1 endpoint changes withhold
+the shortlist until birth time is confirmed. Picks are alternatives, not an
+instruction to combine them. No automated gemstone purchase, ratti dose,
 body-weight formula, medical cure, guaranteed benefit or forbidden colour/direction.
 The optional weight converter uses an explicitly labelled jewellery convention,
 1 ratti ≈ 0.182 g = 0.91 ct; the unit varies across sellers and historical standards.
