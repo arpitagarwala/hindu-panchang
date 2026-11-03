@@ -28,6 +28,7 @@ jobs:
       - run: node scripts/build-pwa.mjs
       - run: npx tsx scripts/verify-pwa.ts
       - run: npx tsx scripts/verify-offline-month.ts
+      - run: npx tsx scripts/verify-jyotish.ts
       - run: npm run build
       - name: Check production server
         shell: bash
@@ -44,3 +45,4 @@ jobs:
           node scripts/verify-observances.mjs
           node scripts/verify-seo.mjs
           node scripts/verify-pwa-http.mjs
+          node scripts/verify-jyotish-http.mjs

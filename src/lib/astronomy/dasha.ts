@@ -192,7 +192,9 @@ export function calculateVimshottariDasha(
   const mahadashas: DashaSpan[] = [];
   let currentStartMs = birthTimeMs;
 
-  for (let i = 0; i < 9; i++) {
+  // Include the next occurrence of the starting lord so a shortened first
+  // mahadasha does not truncate readings for users approaching age 120.
+  for (let i = 0; i < 10; i++) {
     const cycleIdx = (balance.cycleIndex + i) % 9;
     const rule = VIMSHOTTARI_CYCLE[cycleIdx];
 
@@ -245,7 +247,8 @@ export function calculateVimshottariDasha(
   const targetMs = targetDate.getTime();
   const currentMD = mahadashas.find(
     (md) => targetMs >= new Date(md.startDate).getTime() && targetMs < new Date(md.endDate).getTime()
-  ) || mahadashas[0];
+  );
+  if (!currentMD) throw new RangeError('Reading date is outside the generated Vimshottari timeline.');
 
   const currentAD = currentMD.subPeriods?.find(
     (ad) => targetMs >= new Date(ad.startDate).getTime() && targetMs < new Date(ad.endDate).getTime()

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useId } from 'react';
 import { MapPin, Search, Loader2, Check } from 'lucide-react';
 import { CityInfo, searchLocalCities } from '@/lib/geo/cities';
 
@@ -9,6 +9,8 @@ interface CityAutocompleteProps {
   onSelect: (city: CityInfo) => void;
   placeholder?: string;
   className?: string;
+  ariaLabelledBy?: string;
+  onSelectionPendingChange?: (pending:boolean)=>void;
 }
 
 export default function CityAutocomplete({
@@ -16,19 +18,22 @@ export default function CityAutocomplete({
   onSelect,
   placeholder = 'Type city name (e.g. Mumbai, Jaipur, London)...',
   className = '',
+  ariaLabelledBy,
+  onSelectionPendingChange,
 }: CityAutocompleteProps) {
   const [query, setQuery] = useState(value);
+  const [sourceValue,setSourceValue]=useState(value);
   const [isOpen, setIsOpen] = useState(false);
-  const [results, setResults] = useState<CityInfo[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [remote,setRemote]=useState<{query:string;results:CityInfo[]}|null>(null);
+  const [loadingQuery,setLoadingQuery]=useState<string|null>(null);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const listId=useId();
 
-  // Sync internal query with prop when prop changes
-  useEffect(() => {
-    setQuery(value);
-  }, [value]);
+  if(sourceValue!==value){setSourceValue(value);setQuery(value);}
+  const results=remote?.query===query?remote.results:searchLocalCities(query,6);
+  const loading=isOpen&&loadingQuery===query;
 
   // Handle outside click
   useEffect(() => {
@@ -45,45 +50,41 @@ export default function CityAutocomplete({
   useEffect(() => {
     if (!isOpen) return;
 
-    // Fast local lookup first
-    const local = searchLocalCities(query, 6);
-    setResults(local);
+    if (query.trim().length < 2) return;
 
-    if (query.trim().length < 2) {
-      setLoading(false);
-      return;
-    }
-
+    const controller=new AbortController();
     const timer = setTimeout(async () => {
-      setLoading(true);
+      setLoadingQuery(query);
       try {
-        const res = await fetch(`/api/geocode?q=${encodeURIComponent(query.trim())}`);
+        const res = await fetch(`/api/geocode?q=${encodeURIComponent(query.trim())}`,{signal:controller.signal});
         if (res.ok) {
           const data = await res.json();
-          if (data.results && data.results.length > 0) {
-            setResults(data.results);
+          if (!controller.signal.aborted && data.results && data.results.length > 0) {
+            setRemote({query,results:data.results});
           }
         }
       } catch (err) {
-        console.error('Failed to fetch cities:', err);
+        if(!controller.signal.aborted)console.error('Failed to fetch cities:', err);
       } finally {
-        setLoading(false);
+        if(!controller.signal.aborted)setLoadingQuery(null);
       }
     }, 300);
 
-    return () => clearTimeout(timer);
+    return () => {clearTimeout(timer);controller.abort();};
   }, [query, isOpen]);
 
   const handleSelect = (city: CityInfo) => {
     const formatted = `${city.name}${city.state ? `, ${city.state}` : ''}, ${city.country}`;
     setQuery(formatted);
     setIsOpen(false);
+    onSelectionPendingChange?.(false);
     onSelect(city);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!isOpen) {
       if (e.key === 'ArrowDown' || e.key === 'Enter') {
+        e.preventDefault();
         setIsOpen(true);
       }
       return;
@@ -111,6 +112,12 @@ export default function CityAutocomplete({
     <div ref={containerRef} className={`relative ${className}`}>
       <div className="relative">
         <input
+          aria-labelledby={ariaLabelledBy}
+          role="combobox"
+          aria-autocomplete="list"
+          aria-expanded={isOpen}
+          aria-controls={listId}
+          aria-activedescendant={isOpen&&selectedIndex>=0?`${listId}-${selectedIndex}`:undefined}
           ref={inputRef}
           type="text"
           value={query}
@@ -118,6 +125,7 @@ export default function CityAutocomplete({
             setQuery(e.target.value);
             setIsOpen(true);
             setSelectedIndex(-1);
+            onSelectionPendingChange?.(true);
           }}
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleKeyDown}
@@ -134,7 +142,7 @@ export default function CityAutocomplete({
 
       {/* Autocomplete Dropdown */}
       {isOpen && (
-        <div className="absolute z-50 left-0 right-0 mt-1.5 max-h-64 overflow-y-auto rounded-2xl bg-stone-900 border border-stone-800 shadow-2xl backdrop-blur-lg divide-y divide-stone-800/60 animate-in fade-in slide-in-from-top-2 duration-150">
+        <div id={listId} role="listbox" aria-label={placeholder} className="absolute z-50 left-0 right-0 mt-1.5 max-h-64 overflow-y-auto rounded-2xl bg-stone-900 border border-stone-800 shadow-2xl backdrop-blur-lg divide-y divide-stone-800/60 animate-in fade-in slide-in-from-top-2 duration-150">
           {results.length === 0 ? (
             <div className="p-4 text-center text-xs text-stone-400">
               {loading ? 'Searching city coordinates...' : 'No cities found. Try typing another city or district.'}
@@ -146,6 +154,9 @@ export default function CityAutocomplete({
                 <button
                   key={`${city.name}-${city.latitude}-${city.longitude}-${idx}`}
                   type="button"
+                  role="option"
+                  id={`${listId}-${idx}`}
+                  aria-selected={isSelected}
                   onClick={() => handleSelect(city)}
                   onMouseEnter={() => setSelectedIndex(idx)}
                   className={`w-full text-left px-4 py-2.5 flex items-center justify-between transition-colors ${

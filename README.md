@@ -6,7 +6,7 @@ Live app: https://panchang.arpitagarwala.com · [Public AGPL source](https://git
 
 See [PUBLISHING.md](PUBLISHING.md) for subdomain deployment, HTTPS, public licensing and Search Console setup. Configure `SITE_URL` and `SITE_INDEXING` before a public build; previews intentionally stay noindex. Crawlable city pages, canonical URLs, structured data, social previews and a sitemap are included. Device location is permission-based; saved manual cities and shared coordinates take precedence over automatic detection. No public deployment or Google submission is implied by the local implementation.
 
-A location-aware Hindu Panchang built with Next.js 16 and React 19. Daily calendar and observance APIs use Swiss Ephemeris 2.10.03 with the official Sun and Moon ephemeris files. The existing Jyotish tools remain at `/jyotish` and retain their original calculation engine.
+A location-aware Hindu Panchang built with Next.js 16 and React 19. Daily calendar and observance APIs use Swiss Ephemeris 2.10.03 with the official Sun and Moon ephemeris files. The upgraded `/jyotish` app now generates birth charts and bilingual traditional readings using the same self-hosted Swiss Ephemeris engine. See [JYOTISH_METHODS.md](JYOTISH_METHODS.md) for calculation choices, privacy, interpretation limits and resource controls.
 
 ## Run
 
